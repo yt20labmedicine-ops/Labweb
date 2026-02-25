@@ -5,66 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>檢驗資料總覽</title>
 
-<!-- NHI theme（由產生器自動建立 out_html_v3/assets/nhi.css） -->
-<link rel="stylesheet" href="assets/nhi.css" />
-
 <style>
-/* =========================================================
-   template_table_v3.html（NHI 風格母版）
-   - 仍保留你原本產生器會用到的 class 名稱（auto-style*）
-   - 但視覺改為健保署風格青綠色、白底、淺灰背景、卡片式
-   ========================================================= */
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
 
-/* --- 讓舊版 auto-style* 對應到 NHI 風格 --- */
-.auto-style1{ /* 標題列(舊) -> 由 .nhi-topbar 取代，保留避免舊內容斷裂 */ }
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
 .auto-style2{ /* 左欄 label */
   text-align:center;
   font-size:15px;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:#004d55;
   border:1px solid var(--nhi-border);
   background:var(--nhi-head);
   font-weight:700;
 }
-.auto-style5{ /* 左右留白欄（舊） */
-  border:0;
-  background:transparent;
-}
-.auto-style7{ /* 右側留白欄（舊） */
-  border:0;
-  background:transparent;
-}
-.auto-style10{ /* 右欄 value（一般文字） */
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
   border:1px solid var(--nhi-border);
   background:#fff;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:15px;
   color:var(--nhi-text);
 }
-.auto-style11{ /* label 文字（舊 p） */
-  margin:0;
-}
-.auto-style16{ /* 舊大段文字（備用） */
-  margin:0;
-  line-height:1.7;
-}
-.auto-style37{ /* 右欄 value（含圖片表格） */
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
   border:1px solid var(--nhi-border);
   background:#fff;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:15px;
   color:var(--nhi-text);
   padding:10px;
 }
-.auto-style40{ /* 圖片框內 td */
+.auto-style40{
   text-align:center;
   border:1px solid var(--nhi-border);
   background:#fff;
 }
-.auto-style41,.auto-style42{ /* 參考值巢狀表格 */
+.auto-style41,.auto-style42{
   border:1px solid var(--nhi-border);
   padding:10px;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:14px;
 }
 .auto-style42{
@@ -73,16 +91,13 @@
   background:var(--nhi-head);
   color:#004d55;
 }
-.auto-style43{ /* 右欄內容 p */
+.auto-style43{
   margin:0;
   line-height:1.75;
   white-space:normal;
 }
-.auto-style44{ /* 備用 */
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
-}
 
-/* --- 版面容器（卡片式）--- */
+/* layout */
 .page-wrap{
   max-width:1100px;
   margin:18px auto 30px;
@@ -119,7 +134,7 @@
   font-size:13px;
 }
 
-/* --- 主表格細節 --- */
+/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -132,12 +147,7 @@
   vertical-align:top;
 }
 
-/* 讓左欄固定寬一點（看起來像你原本的表單） */
-.label-col{
-  width:220px;
-}
-
-/* 圖片固定 250*250：nhi.css 已有 .img-box / img 規則，這裡再保險一次 */
+/* image box 250x250 */
 .img-box{
   width:250px;
   height:250px;
@@ -157,7 +167,6 @@
   display:block;
 }
 
-/* footer */
 .footer{
   margin-top:12px;
   color:#607d8b;
@@ -169,7 +178,6 @@
 
 <body>
 
-<!-- 頂端健保署風格色帶 -->
 <div class="nhi-topbar">
   <div class="title">亞洲大學附屬醫院 檢驗科</div>
   <div class="sub">檢驗資料總覽</div>
@@ -182,123 +190,7 @@
       <div class="badge">檢驗項目明細</div>
     </div>
 
-    <!-- 主內容表格：產生器會把 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">一般生化檢驗單-U(CM-T2402)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">微蛋白與肌酸酐比值（ACR, Albumin creatinine ratio）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43"><30 ug/mg</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
-<tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/010紅頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">紅頭管/尿液<br />
-尿液採檢量3-6mL</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
-</table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1.檢體類別僅限於尿液。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">特定退檢標準</p></td>
-    <td class="auto-style10"><p class="auto-style43">非尿液檢體</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">Microalbumin：Turbidimetric method<br />
-Creatinine：Colorimetry/Alkaline Picrate</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">請參閱量測不確定度</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">生化組#1299</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">急診40分鐘；<br />
-一般件4小時</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">1.白蛋白合成於肝細胞中，具有維持滲透壓及運輸體內許多化合物、藥物、代謝廢物、毒素及激素等的功能。<br />
-2.Albumin(白蛋白)是血液中含量相當高的蛋白質，當腎臟功能正常時，並不會有Albumin(白蛋白)會滲漏到尿液中，而當腎衰竭(renal failure)時(腎功能緩慢降低的最後階段)，大量的Protein會滲漏到尿中。而在此程度的損傷發生之前，在腎臟的血液過濾系統微小的變化，將會使非常微量的Albumin(白蛋白)滲漏到尿液中，通常乃是由糖尿病患者之併發症所造成的。此情形稱為Microalbuminuria(微白蛋白尿)，測量尿液中的白蛋白可有助於用來診斷腎臟官能障礙。<br />
-3.可合併肌酸酐(creatinine)做ACR公式計算(creatinine/MA)以擴清率評估腎臟病變，官能障礙程度。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">簽收四小時內，且檢體量足夠者可加驗</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">12111C/09016C</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">275/40</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr> 替換成多個 <tr> -->
-    <table class="main-table" style="width:100%;">
+    <table class="main-table">
       <tbody>
         
   <tr>
@@ -328,7 +220,7 @@ Creatinine：Colorimetry/Alkaline Picrate</p></td>
     <td class="auto-style37">
       <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/010紅頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">紅頭管/尿液<br />
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/010紅頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">紅頭管/尿液<br />
 尿液採檢量3-6mL</span></td></tr></table></td>
 <td style="width:50%">&nbsp;</td></tr>
 </table>

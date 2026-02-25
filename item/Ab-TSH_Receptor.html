@@ -5,66 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>檢驗資料總覽</title>
 
-<!-- NHI theme（由產生器自動建立 out_html_v3/assets/nhi.css） -->
-<link rel="stylesheet" href="assets/nhi.css" />
-
 <style>
-/* =========================================================
-   template_table_v3.html（NHI 風格母版）
-   - 仍保留你原本產生器會用到的 class 名稱（auto-style*）
-   - 但視覺改為健保署風格青綠色、白底、淺灰背景、卡片式
-   ========================================================= */
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
 
-/* --- 讓舊版 auto-style* 對應到 NHI 風格 --- */
-.auto-style1{ /* 標題列(舊) -> 由 .nhi-topbar 取代，保留避免舊內容斷裂 */ }
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
 .auto-style2{ /* 左欄 label */
   text-align:center;
   font-size:15px;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:#004d55;
   border:1px solid var(--nhi-border);
   background:var(--nhi-head);
   font-weight:700;
 }
-.auto-style5{ /* 左右留白欄（舊） */
-  border:0;
-  background:transparent;
-}
-.auto-style7{ /* 右側留白欄（舊） */
-  border:0;
-  background:transparent;
-}
-.auto-style10{ /* 右欄 value（一般文字） */
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
   border:1px solid var(--nhi-border);
   background:#fff;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:15px;
   color:var(--nhi-text);
 }
-.auto-style11{ /* label 文字（舊 p） */
-  margin:0;
-}
-.auto-style16{ /* 舊大段文字（備用） */
-  margin:0;
-  line-height:1.7;
-}
-.auto-style37{ /* 右欄 value（含圖片表格） */
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
   border:1px solid var(--nhi-border);
   background:#fff;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:15px;
   color:var(--nhi-text);
   padding:10px;
 }
-.auto-style40{ /* 圖片框內 td */
+.auto-style40{
   text-align:center;
   border:1px solid var(--nhi-border);
   background:#fff;
 }
-.auto-style41,.auto-style42{ /* 參考值巢狀表格 */
+.auto-style41,.auto-style42{
   border:1px solid var(--nhi-border);
   padding:10px;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:14px;
 }
 .auto-style42{
@@ -73,16 +91,13 @@
   background:var(--nhi-head);
   color:#004d55;
 }
-.auto-style43{ /* 右欄內容 p */
+.auto-style43{
   margin:0;
   line-height:1.75;
   white-space:normal;
 }
-.auto-style44{ /* 備用 */
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
-}
 
-/* --- 版面容器（卡片式）--- */
+/* layout */
 .page-wrap{
   max-width:1100px;
   margin:18px auto 30px;
@@ -119,7 +134,7 @@
   font-size:13px;
 }
 
-/* --- 主表格細節 --- */
+/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -132,12 +147,7 @@
   vertical-align:top;
 }
 
-/* 讓左欄固定寬一點（看起來像你原本的表單） */
-.label-col{
-  width:220px;
-}
-
-/* 圖片固定 250*250：nhi.css 已有 .img-box / img 規則，這裡再保險一次 */
+/* image box 250x250 */
 .img-box{
   width:250px;
   height:250px;
@@ -157,7 +167,6 @@
   display:block;
 }
 
-/* footer */
 .footer{
   margin-top:12px;
   color:#607d8b;
@@ -169,7 +178,6 @@
 
 <body>
 
-<!-- 頂端健保署風格色帶 -->
 <div class="nhi-topbar">
   <div class="title">亞洲大學附屬醫院 檢驗科</div>
   <div class="sub">檢驗資料總覽</div>
@@ -182,114 +190,7 @@
       <div class="badge">檢驗項目明細</div>
     </div>
 
-    <!-- 主內容表格：產生器會把 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">放射免疫分析檢驗單 (CM-T310)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">甲促素結合體抗體免疫分析（Ab-TSH Receptor）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43"><15%</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
-<tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
-血液採檢量3-4mL</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
-</table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1.採血後倒轉試管5-6次。<br />
-2.血清保存在2-8℃穩定3天，長期保存請置於-20℃可達1個月。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">RIA (Radio-immunoassay)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">代檢單位：立人(邱內科)醫事檢驗所(02)2563-9353<br />
-責任單位：亞大醫院(檢驗科)#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">委外5工作天</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">甲狀腺刺激免疫球蛋白結合作用在甲狀腺細胞上的 TSH receptor，它會直接刺激甲狀腺表面產生cyclic AMP，使甲狀腺細胞間質酵素活化，進而分泌過量甲狀腺素，這種自體抗體的產生，不受大腦的抑制，致使甲狀腺機能亢進狀態逐漸嚴重，稱為葛雷芙氏症(Grave's disease)。 Ab-TSH Receptor檢驗的目的在分辨診斷 Grave’s disease 及 Hyperthyroidism，大部分 Grave’s disease 的病人呈現陽性。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">27069B</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">450</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr> 替換成多個 <tr> -->
-    <table class="main-table" style="width:100%;">
+    <table class="main-table">
       <tbody>
         
   <tr>
@@ -319,7 +220,7 @@
     <td class="auto-style37">
       <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
 血液採檢量3-4mL</span></td></tr></table></td>
 <td style="width:50%">&nbsp;</td></tr>
 </table>

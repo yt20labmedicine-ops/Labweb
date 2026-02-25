@@ -5,66 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>檢驗資料總覽</title>
 
-<!-- NHI theme（由產生器自動建立 out_html_v3/assets/nhi.css） -->
-<link rel="stylesheet" href="assets/nhi.css" />
-
 <style>
-/* =========================================================
-   template_table_v3.html（NHI 風格母版）
-   - 仍保留你原本產生器會用到的 class 名稱（auto-style*）
-   - 但視覺改為健保署風格青綠色、白底、淺灰背景、卡片式
-   ========================================================= */
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
 
-/* --- 讓舊版 auto-style* 對應到 NHI 風格 --- */
-.auto-style1{ /* 標題列(舊) -> 由 .nhi-topbar 取代，保留避免舊內容斷裂 */ }
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
 .auto-style2{ /* 左欄 label */
   text-align:center;
   font-size:15px;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:#004d55;
   border:1px solid var(--nhi-border);
   background:var(--nhi-head);
   font-weight:700;
 }
-.auto-style5{ /* 左右留白欄（舊） */
-  border:0;
-  background:transparent;
-}
-.auto-style7{ /* 右側留白欄（舊） */
-  border:0;
-  background:transparent;
-}
-.auto-style10{ /* 右欄 value（一般文字） */
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
   border:1px solid var(--nhi-border);
   background:#fff;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:15px;
   color:var(--nhi-text);
 }
-.auto-style11{ /* label 文字（舊 p） */
-  margin:0;
-}
-.auto-style16{ /* 舊大段文字（備用） */
-  margin:0;
-  line-height:1.7;
-}
-.auto-style37{ /* 右欄 value（含圖片表格） */
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
   border:1px solid var(--nhi-border);
   background:#fff;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:15px;
   color:var(--nhi-text);
   padding:10px;
 }
-.auto-style40{ /* 圖片框內 td */
+.auto-style40{
   text-align:center;
   border:1px solid var(--nhi-border);
   background:#fff;
 }
-.auto-style41,.auto-style42{ /* 參考值巢狀表格 */
+.auto-style41,.auto-style42{
   border:1px solid var(--nhi-border);
   padding:10px;
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   font-size:14px;
 }
 .auto-style42{
@@ -73,16 +91,13 @@
   background:var(--nhi-head);
   color:#004d55;
 }
-.auto-style43{ /* 右欄內容 p */
+.auto-style43{
   margin:0;
   line-height:1.75;
   white-space:normal;
 }
-.auto-style44{ /* 備用 */
-  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
-}
 
-/* --- 版面容器（卡片式）--- */
+/* layout */
 .page-wrap{
   max-width:1100px;
   margin:18px auto 30px;
@@ -119,7 +134,7 @@
   font-size:13px;
 }
 
-/* --- 主表格細節 --- */
+/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -132,12 +147,7 @@
   vertical-align:top;
 }
 
-/* 讓左欄固定寬一點（看起來像你原本的表單） */
-.label-col{
-  width:220px;
-}
-
-/* 圖片固定 250*250：nhi.css 已有 .img-box / img 規則，這裡再保險一次 */
+/* image box 250x250 */
 .img-box{
   width:250px;
   height:250px;
@@ -157,7 +167,6 @@
   display:block;
 }
 
-/* footer */
 .footer{
   margin-top:12px;
   color:#607d8b;
@@ -169,7 +178,6 @@
 
 <body>
 
-<!-- 頂端健保署風格色帶 -->
 <div class="nhi-topbar">
   <div class="title">亞洲大學附屬醫院 檢驗科</div>
   <div class="sub">檢驗資料總覽</div>
@@ -182,120 +190,7 @@
       <div class="badge">檢驗項目明細</div>
     </div>
 
-    <!-- 主內容表格：產生器會把 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">結核菌培養、黴菌培養檢驗單(CM-T251)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">抗酸菌染色（Acid Fast Stain）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">Not found</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
-<tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/013無菌痰盒NEW.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌痰盒/痰液、糞便、組織<br />
-痰液採檢量5mL以上<br />
-糞便採檢至少花生米大小，液狀便3mL</span></td></tr></table></td>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/026無菌離心管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌離心管/尿液、體液<br />
-尿液採檢量5mL以上<br />
-體液採檢量2mL以上</span></td></tr></table></td>
-</tr>
-<tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/018白色運送棒.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">白色運送棒/膿液</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
-</table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1.膿液可以白色運送棒採檢，並與Pus TB Culture同一檢體。不接受玻片送檢。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">抗酸菌染色法(Acid fast stain)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">代檢單位：芮弗士檢驗所(04)-23509091<br />
-責任單位：細菌組#1293</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">委外3工作天</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">多數之細菌可藉簡單染色法或革蘭氏染色法而著色，但有少數菌屬尤以分支桿菌屬(Mycobacterium)中之細菌則需藉抗酸性染色法始能觀察。此屬中之結核桿菌(Mycobacterium tuberculosis)與痲瘋桿菌(Mycobacterium leprae)乃人類之致病性菌，對於此類菌之鑑定，本染色法具有診斷價值。陽性染色結果需以GSM通知主治醫師、開單醫師、院感小組及TB個案管理師。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">13025C</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">74</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr> 替換成多個 <tr> -->
-    <table class="main-table" style="width:100%;">
+    <table class="main-table">
       <tbody>
         
   <tr>
@@ -325,15 +220,15 @@
     <td class="auto-style37">
       <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/013無菌痰盒NEW.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌痰盒/痰液、糞便、組織<br />
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/013無菌痰盒NEW.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌痰盒/痰液、糞便、組織<br />
 痰液採檢量5mL以上<br />
 糞便採檢至少花生米大小，液狀便3mL</span></td></tr></table></td>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/026無菌離心管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌離心管/尿液、體液<br />
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/026無菌離心管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌離心管/尿液、體液<br />
 尿液採檢量5mL以上<br />
 體液採檢量2mL以上</span></td></tr></table></td>
 </tr>
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="img/018白色運送棒.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">白色運送棒/膿液</span></td></tr></table></td>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/018白色運送棒.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">白色運送棒/膿液</span></td></tr></table></td>
 <td style="width:50%">&nbsp;</td></tr>
 </table>
     </td>
