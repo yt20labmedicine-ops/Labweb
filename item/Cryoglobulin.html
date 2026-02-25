@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<!-- NHI theme（由產生器自動建立 out_html_v3/assets/nhi.css） -->
+<link rel="stylesheet" href="assets/nhi.css" />
+
+<style>
+/* =========================================================
+   template_table_v3.html（NHI 風格母版）
+   - 仍保留你原本產生器會用到的 class 名稱（auto-style*）
+   - 但視覺改為健保署風格青綠色、白底、淺灰背景、卡片式
+   ========================================================= */
+
+/* --- 讓舊版 auto-style* 對應到 NHI 風格 --- */
+.auto-style1{ /* 標題列(舊) -> 由 .nhi-topbar 取代，保留避免舊內容斷裂 */ }
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ /* 左右留白欄（舊） */
+  border:0;
+  background:transparent;
+}
+.auto-style7{ /* 右側留白欄（舊） */
+  border:0;
+  background:transparent;
+}
+.auto-style10{ /* 右欄 value（一般文字） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ /* label 文字（舊 p） */
+  margin:0;
+}
+.auto-style16{ /* 舊大段文字（備用） */
+  margin:0;
+  line-height:1.7;
+}
+.auto-style37{ /* 右欄 value（含圖片表格） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{ /* 圖片框內 td */
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{ /* 參考值巢狀表格 */
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{ /* 右欄內容 p */
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+.auto-style44{ /* 備用 */
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+}
+
+/* --- 版面容器（卡片式）--- */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+
+/* --- 主表格細節 --- */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* 讓左欄固定寬一點（看起來像你原本的表單） */
+.label-col{
+  width:220px;
+}
+
+/* 圖片固定 250*250：nhi.css 已有 .img-box / img 規則，這裡再保險一次 */
+.img-box{
+  width:250px;
+  height:250px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:250px;
+  max-height:250px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+/* footer */
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 頂端健保署風格色帶 -->
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <!-- 主內容表格：產生器會把 
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">血清免疫抗體檢驗單 (CM-1710)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">冷凍球蛋白（Cryoglobulin）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Negative</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/010紅頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">紅頭管/血液<br />
+血液採檢量10 mL (兩管)</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1.血液採足兩管各5 mL。<br />
+2.採檢前請聯絡檢驗科，領取溫浴瓶；採檢後檢體袋密封，放入溫浴瓶立即送檢。<br />
+3.Lipemia 檢體應避免，因可能會造成非特異性反應。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">物理沉澱法</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">血清免疫組#1238、1299</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">7工作天</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">冷凝球蛋白(Cryoglobulin)是人類血液中的一群遇冷即沈澱之免疫球蛋白，首次發現於多發性骨髓瘤病人的血清中，通常於室溫或低溫下沈澱，於體溫或高溫下會再溶解。主要可分為三型：<br />
+1. 第一型是由單株免疫球蛋白monoclonal immunoglobulin所組成—IgG, IgA, IgM或Bence Jones protein only，通常發生於multiple myeloma、Waldenstrom’s macroglobulinemia and chronic lymphocytic leukemia病人，並不具有類風濕因子活性。<br />
+2. 第二型是混合型免疫球蛋白(Mixed cryoglobulins)由一種單株免疫球蛋白之抗體對抗一種或二種多株免疫球蛋白所組成—IgM-IgG、IgG-IgG、IgA-IgG、IgM-IgG-IgA。<br />
+3. 第三型和第二型相同是混合型免疫球蛋白只不過皆由多株免疫球蛋白所組成(Mixed polyclonal cryoglobulins)— IgM-IgG、IgM-IgG-IgA，且都具有類風濕因子活性。<br />
+第二型和第三型若續發於其他疾病如感染(Acute viral hepatitis、chronic active hepatitis、poststreptococcal glomerulonephritis、infective endocarditis、leprosy)、自體免疫(SLE、rheumatoid arthritis、Sjogren’s syndrome)或淋巴細胞腫瘤(Myeloma、Waldenstrom’s macroglobulinemia and chronic lymphocytic leukemia)稱為續發性冷凝球蛋白症，若無明顯疾病而產生者則稱之為原發性冷凝球蛋白症(Essential mixed cryoglobulinemia)。<br />
+C型肝炎為台灣最常見原發性冷凝球蛋白症(Essential mixed cryoglobulinemia)之例證，C型肝炎病患之中約70%有臨床上或實驗室檢查方面的免疫異常現象，感染後約有五成會出現冷凝球蛋白血症，病患可能在HCV感染後七至十五年出現臨床症狀包括常見之雷諾氏現象(Raynaud's phenomenon)、紫斑等。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">12062B</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">163</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr> 替換成多個 <tr> -->
+    <table class="main-table" style="width:100%;">
+      <tbody>
+        
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">血清免疫抗體檢驗單 (CM-1710)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">冷凍球蛋白（Cryoglobulin）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Negative</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/010紅頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">紅頭管/血液<br />
+血液採檢量10 mL (兩管)</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1.血液採足兩管各5 mL。<br />
+2.採檢前請聯絡檢驗科，領取溫浴瓶；採檢後檢體袋密封，放入溫浴瓶立即送檢。<br />
+3.Lipemia 檢體應避免，因可能會造成非特異性反應。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">物理沉澱法</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">血清免疫組#1238、1299</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">7工作天</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">冷凝球蛋白(Cryoglobulin)是人類血液中的一群遇冷即沈澱之免疫球蛋白，首次發現於多發性骨髓瘤病人的血清中，通常於室溫或低溫下沈澱，於體溫或高溫下會再溶解。主要可分為三型：<br />
+1. 第一型是由單株免疫球蛋白monoclonal immunoglobulin所組成—IgG, IgA, IgM或Bence Jones protein only，通常發生於multiple myeloma、Waldenstrom’s macroglobulinemia and chronic lymphocytic leukemia病人，並不具有類風濕因子活性。<br />
+2. 第二型是混合型免疫球蛋白(Mixed cryoglobulins)由一種單株免疫球蛋白之抗體對抗一種或二種多株免疫球蛋白所組成—IgM-IgG、IgG-IgG、IgA-IgG、IgM-IgG-IgA。<br />
+3. 第三型和第二型相同是混合型免疫球蛋白只不過皆由多株免疫球蛋白所組成(Mixed polyclonal cryoglobulins)— IgM-IgG、IgM-IgG-IgA，且都具有類風濕因子活性。<br />
+第二型和第三型若續發於其他疾病如感染(Acute viral hepatitis、chronic active hepatitis、poststreptococcal glomerulonephritis、infective endocarditis、leprosy)、自體免疫(SLE、rheumatoid arthritis、Sjogren’s syndrome)或淋巴細胞腫瘤(Myeloma、Waldenstrom’s macroglobulinemia and chronic lymphocytic leukemia)稱為續發性冷凝球蛋白症，若無明顯疾病而產生者則稱之為原發性冷凝球蛋白症(Essential mixed cryoglobulinemia)。<br />
+C型肝炎為台灣最常見原發性冷凝球蛋白症(Essential mixed cryoglobulinemia)之例證，C型肝炎病患之中約70%有臨床上或實驗室檢查方面的免疫異常現象，感染後約有五成會出現冷凝球蛋白血症，病患可能在HCV感染後七至十五年出現臨床症狀包括常見之雷諾氏現象(Raynaud's phenomenon)、紫斑等。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">12062B</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">163</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages (NHI theme)</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<!-- NHI theme（由產生器自動建立 out_html_v3/assets/nhi.css） -->
+<link rel="stylesheet" href="assets/nhi.css" />
+
+<style>
+/* =========================================================
+   template_table_v3.html（NHI 風格母版）
+   - 仍保留你原本產生器會用到的 class 名稱（auto-style*）
+   - 但視覺改為健保署風格青綠色、白底、淺灰背景、卡片式
+   ========================================================= */
+
+/* --- 讓舊版 auto-style* 對應到 NHI 風格 --- */
+.auto-style1{ /* 標題列(舊) -> 由 .nhi-topbar 取代，保留避免舊內容斷裂 */ }
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ /* 左右留白欄（舊） */
+  border:0;
+  background:transparent;
+}
+.auto-style7{ /* 右側留白欄（舊） */
+  border:0;
+  background:transparent;
+}
+.auto-style10{ /* 右欄 value（一般文字） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ /* label 文字（舊 p） */
+  margin:0;
+}
+.auto-style16{ /* 舊大段文字（備用） */
+  margin:0;
+  line-height:1.7;
+}
+.auto-style37{ /* 右欄 value（含圖片表格） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{ /* 圖片框內 td */
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{ /* 參考值巢狀表格 */
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{ /* 右欄內容 p */
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+.auto-style44{ /* 備用 */
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+}
+
+/* --- 版面容器（卡片式）--- */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+
+/* --- 主表格細節 --- */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* 讓左欄固定寬一點（看起來像你原本的表單） */
+.label-col{
+  width:220px;
+}
+
+/* 圖片固定 250*250：nhi.css 已有 .img-box / img 規則，這裡再保險一次 */
+.img-box{
+  width:250px;
+  height:250px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:250px;
+  max-height:250px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+/* footer */
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 頂端健保署風格色帶 -->
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <!-- 主內容表格：產生器會把 
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">特殊檢驗單-Other (CM-T211)<br />
+急診特殊檢驗單 (CM-T224)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">腦脊髓液常規檢驗（CSF Routine）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Appearance：clear<br />
+color：colorless<br />
+WBC：<br />
+(1) 新生兒：<30 cells/μL<br />
+(2) 成人：<5 cells/μL</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/026無菌離心管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌離心管/CSF<br />
+CSF採檢量1-3 mL</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 檢體採集後1小時內常溫送檢。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">細胞離心染色(Wright-Giemsa Stain)、白血球分類計數法、直接鏡檢法</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">鏡檢組#1292</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">急件2小時；一般件24小時</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 血球計數白血球總數增加時：<br />
+(1) 大量增加，從500至數千¬¬---細菌性腦膜炎。<br />
+(2) 少量增加，20~500---結核性腦膜炎。<br />
+(3) 少量增加，急性時可達500以上---梅毒性腦膜炎。<br />
+(4) 少量增加，15~500---病毒性腦膜炎。<br />
+(5) 少量增加---黴菌性腦膜炎、寄生蟲性腦膜炎、腦膿腫、腦腫瘤。<br />
+(6) 紅血球總量增加： OLD RBC > FRESH RBC：原發性蜘蛛網膜下腔出血或顱內出血。<br />
+(7) Fresh RBC：可能在採檢時混入。<br />
+2. 細胞分類計數：<br />
+(1) 顱內出血或蜘蛛網膜下腔出血之CSF中常可見到Macrophage上升。<br />
+(2) 細菌性腦膜炎患者CSF中之PMN上升，常>50%。<br />
+(3) 黴菌性腦膜炎患者CSF中之WBC上升以Lymphocyte為主。<br />
+(4) 結核性腦膜炎患者以Lymphocytes及Monocytes為主。<br />
+(5) 病毒性腦膜炎患者初期是PMN上升，然後是Lymphocytes。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">16006C</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">170</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr> 替換成多個 <tr> -->
+    <table class="main-table" style="width:100%;">
+      <tbody>
+        
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">特殊檢驗單-Other (CM-T211)<br />
+急診特殊檢驗單 (CM-T224)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">腦脊髓液常規檢驗（CSF Routine）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Appearance：clear<br />
+color：colorless<br />
+WBC：<br />
+(1) 新生兒：<30 cells/μL<br />
+(2) 成人：<5 cells/μL</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/026無菌離心管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌離心管/CSF<br />
+CSF採檢量1-3 mL</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 檢體採集後1小時內常溫送檢。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">細胞離心染色(Wright-Giemsa Stain)、白血球分類計數法、直接鏡檢法</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">鏡檢組#1292</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">急件2小時；一般件24小時</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 血球計數白血球總數增加時：<br />
+(1) 大量增加，從500至數千¬¬---細菌性腦膜炎。<br />
+(2) 少量增加，20~500---結核性腦膜炎。<br />
+(3) 少量增加，急性時可達500以上---梅毒性腦膜炎。<br />
+(4) 少量增加，15~500---病毒性腦膜炎。<br />
+(5) 少量增加---黴菌性腦膜炎、寄生蟲性腦膜炎、腦膿腫、腦腫瘤。<br />
+(6) 紅血球總量增加： OLD RBC > FRESH RBC：原發性蜘蛛網膜下腔出血或顱內出血。<br />
+(7) Fresh RBC：可能在採檢時混入。<br />
+2. 細胞分類計數：<br />
+(1) 顱內出血或蜘蛛網膜下腔出血之CSF中常可見到Macrophage上升。<br />
+(2) 細菌性腦膜炎患者CSF中之PMN上升，常>50%。<br />
+(3) 黴菌性腦膜炎患者CSF中之WBC上升以Lymphocyte為主。<br />
+(4) 結核性腦膜炎患者以Lymphocytes及Monocytes為主。<br />
+(5) 病毒性腦膜炎患者初期是PMN上升，然後是Lymphocytes。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">16006C</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">170</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages (NHI theme)</div>
+</div>
+
+</body>
+</html>
