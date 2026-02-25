@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<!-- NHI theme（由產生器自動建立 out_html_v3/assets/nhi.css） -->
+<link rel="stylesheet" href="assets/nhi.css" />
+
+<style>
+/* =========================================================
+   template_table_v3.html（NHI 風格母版）
+   - 仍保留你原本產生器會用到的 class 名稱（auto-style*）
+   - 但視覺改為健保署風格青綠色、白底、淺灰背景、卡片式
+   ========================================================= */
+
+/* --- 讓舊版 auto-style* 對應到 NHI 風格 --- */
+.auto-style1{ /* 標題列(舊) -> 由 .nhi-topbar 取代，保留避免舊內容斷裂 */ }
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ /* 左右留白欄（舊） */
+  border:0;
+  background:transparent;
+}
+.auto-style7{ /* 右側留白欄（舊） */
+  border:0;
+  background:transparent;
+}
+.auto-style10{ /* 右欄 value（一般文字） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ /* label 文字（舊 p） */
+  margin:0;
+}
+.auto-style16{ /* 舊大段文字（備用） */
+  margin:0;
+  line-height:1.7;
+}
+.auto-style37{ /* 右欄 value（含圖片表格） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{ /* 圖片框內 td */
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{ /* 參考值巢狀表格 */
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{ /* 右欄內容 p */
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+.auto-style44{ /* 備用 */
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+}
+
+/* --- 版面容器（卡片式）--- */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+
+/* --- 主表格細節 --- */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* 讓左欄固定寬一點（看起來像你原本的表單） */
+.label-col{
+  width:220px;
+}
+
+/* 圖片固定 250*250：nhi.css 已有 .img-box / img 規則，這裡再保險一次 */
+.img-box{
+  width:250px;
+  height:250px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:250px;
+  max-height:250px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+/* footer */
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 頂端健保署風格色帶 -->
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <!-- 主內容表格：產生器會把 
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">血清腫瘤標記與賀爾蒙檢驗單 (CM-T231)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">硫酸-脫氫異雄固酮（DHEA-S, Dehydroepiandrosterone Sulfate）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Children range (μg/dL)<br />
+<1 week：108-607<br />
+1-4 weeks：31.6-431<br />
+1-12 months：3.4-124<br />
+1-4 y：0.47-19.4<br />
+5-10 y：2.8-85.2<br />
+Female (μg/dL)<br />
+10-14y：33.9-280<br />
+15-19y：65.1-368<br />
+20-24y：148-407<br />
+25-34y：98.8-340<br />
+35-44y：60.9-337<br />
+45-54y：35.4-256<br />
+55-64y：18.9-205<br />
+65-74y：9.40-246<br />
+>75y：12.0-154<br />
+Male (μg/dL)<br />
+10-14y：24.4-247<br />
+15-19y：70.2-492<br />
+20-24y：211-492<br />
+25-34y：160-449<br />
+35-44y：88.9-427<br />
+45-54y：44.3-331<br />
+55-64y：51.7-295<br />
+65-74y：33.6-249<br />
+>75y：16.2-123</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/005綠頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">綠頭管/血液<br />
+血液採檢量3-4mL</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管8-10次。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">Electro-chemiluminescense immunoassay (ECLIA)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">代檢單位：大安聯合醫事檢驗所 (02)27049977<br />
+責任單位：亞大醫院(檢驗科)#1294</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">委外4工作天</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">評估腎上腺皮質雄性素分泌能力，優於17KS。若要評估雄性素產量不足也可以直接測定Testosterone。<br />
+Cushing正常或偏高，但adrenal adenoma引起的庫辛氏症候群會偏低，而adrenalcarcinoma很高。<br />
+CAH、50%的寡月經、多毛症、多囊性卵巢症候群PCOS中程度上昇。<br />
+血中濃度依著年紀漸長而逐漸下降。使用Phenytoin及Carbamazepine會使DHEA-S濃度下降；激烈運動後數據會上升。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">27080B</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">421</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr> 替換成多個 <tr> -->
+    <table class="main-table" style="width:100%;">
+      <tbody>
+        
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">血清腫瘤標記與賀爾蒙檢驗單 (CM-T231)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">硫酸-脫氫異雄固酮（DHEA-S, Dehydroepiandrosterone Sulfate）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Children range (μg/dL)<br />
+<1 week：108-607<br />
+1-4 weeks：31.6-431<br />
+1-12 months：3.4-124<br />
+1-4 y：0.47-19.4<br />
+5-10 y：2.8-85.2<br />
+Female (μg/dL)<br />
+10-14y：33.9-280<br />
+15-19y：65.1-368<br />
+20-24y：148-407<br />
+25-34y：98.8-340<br />
+35-44y：60.9-337<br />
+45-54y：35.4-256<br />
+55-64y：18.9-205<br />
+65-74y：9.40-246<br />
+>75y：12.0-154<br />
+Male (μg/dL)<br />
+10-14y：24.4-247<br />
+15-19y：70.2-492<br />
+20-24y：211-492<br />
+25-34y：160-449<br />
+35-44y：88.9-427<br />
+45-54y：44.3-331<br />
+55-64y：51.7-295<br />
+65-74y：33.6-249<br />
+>75y：16.2-123</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/005綠頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">綠頭管/血液<br />
+血液採檢量3-4mL</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管8-10次。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">Electro-chemiluminescense immunoassay (ECLIA)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">代檢單位：大安聯合醫事檢驗所 (02)27049977<br />
+責任單位：亞大醫院(檢驗科)#1294</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">委外4工作天</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">評估腎上腺皮質雄性素分泌能力，優於17KS。若要評估雄性素產量不足也可以直接測定Testosterone。<br />
+Cushing正常或偏高，但adrenal adenoma引起的庫辛氏症候群會偏低，而adrenalcarcinoma很高。<br />
+CAH、50%的寡月經、多毛症、多囊性卵巢症候群PCOS中程度上昇。<br />
+血中濃度依著年紀漸長而逐漸下降。使用Phenytoin及Carbamazepine會使DHEA-S濃度下降；激烈運動後數據會上升。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">27080B</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">421</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages (NHI theme)</div>
+</div>
+
+</body>
+</html>
