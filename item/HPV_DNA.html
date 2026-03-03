@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<style>
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
+
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+
+/* layout */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+
+/* main table */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* image box 250x250 */
+.img-box{
+  width:400px;
+  height:400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:400px;
+  max-height:400px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <table class="main-table">
+      <tbody>
+        
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">分子醫學特殊檢驗單 (CM-T2A0)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">人類乳突病毒基因檢驗（HPV DNA test, Human Papilloma Virus DNA test）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Other High Risk HPV：Negative<br />
+HPV Type 16：Negative<br />
+HPV Type 18：Negative</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/048HPV採檢組.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">HPV採檢組/子宮頸檢體</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. Cobas PCR Cell Collection Media(Roche)立寶採檢刷採檢方法：<br />
+(1) 將採檢刷深入子宮頸後，旋轉3周以上刮取子宮頸檢體。<br />
+(2) 把已完成採檢的採檢刷放入Cobas PCR Cell Collection Media中。<br />
+(3) 從距離毛刷2公分處折斷，並將蓋子旋緊後送檢。<br />
+2. 檢體採檢前不可內診，以防潤滑劑滲入。<br />
+3. 採檢體前24 小時不可沖洗陰道，不可用陰道塞劑，不可性交。<br />
+4. 月經期間及產後3~4 個月內，不宜採檢，最好在月經來十天後採樣。<br />
+5. 使用陰道保溼劑Replen並以SurePath Preservative Fluid收集檢體會造成偽陰性的結果。<br />
+6. 子宮頸檢體通常會有明顯可見血液而呈現粉紅色或淡褐色。這些檢體可以正常處理，但是cobas PCR Cell Collection Media或PreservCyt solution內血液濃度超過2% (呈現深紅色或褐色)可能會得到偽陰性的結果。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">Real Time PCR</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">代檢單位：大安聯合醫事檢驗所 (02)27049977<br />
+責任單位：亞大醫院(檢驗科)#1294</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">委外7工作天</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">人類乳突病毒Human Papillomavirus(HPV)是小型、無套膜、雙股DNA病毒，基因組將近有8000個核苷酸，是一種男性與女性都可能感染的常見病毒，主要透過接觸及性行為傳染到人類表皮及黏膜組織常見於生殖器官或肛門。估計約有75%的女性都曾感染過HPV，然而> 90%被感染的女性會啟動有效的免疫反應並在6-24個月將感染清除，不會長期影響健康。<br />
+HPV目前沒有藥物可以治療，而且感染時不會有任何症狀，它可以入侵子宮頸的上皮細胞，破壞細胞調控與修補DNA的功能，讓細胞不受控制的增生並轉變成為惡性細胞。<br />
+持續感染人類乳突病毒Human Papillomavirus (HPV)是造成子宮頸癌(Cervical cancer)子宮頸上皮內贅瘤(Precursor cervical intraepithelial neoplasia；CIN)的主因。目前研究證實全世界99%以上的子宮頸癌和人類乳突病毒的存在有關，人類乳突病毒有超過118種不同的基因型，可以感染人類生殖器黏膜的約有40多種。然而，這些基因型中只有一部分(約13至18個基因型)和子宮頸癌及癌前病變有關(Precursor lesion)。<br />
+這些被稱之為高危險群的人類乳突病毒，高危險群的型分別為Type16, 18, 31, 33, 35, 39, 45, 51, 52, 56, 58, 59, 66及68，其中以Type 16最常見，而Type 18次之，持續感染高危險群的人類乳突病毒是子宮頸癌主要的原因，早期發現癌前病變，將可提高子宮頸癌治療率到98%，HPV DNA檢測可以發現90%以上的中度或重度癌前病變，有效的提高子宮頸癌篩檢的敏感度。HPV高危險群的分型在決定臨床處理及疾病管理越來越重要，可協助判別是否曝露在子宮頸癌的高危險中。本項可輔助子宮頸抹片檢查，提高檢查敏感度，提供子宮頸抹片結果之處理方向，協助子宮頸癌或是前驅病變治療前後的追蹤。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages</div>
+</div>
+
+</body>
+</html>
