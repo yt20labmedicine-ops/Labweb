@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<style>
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
+
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+
+/* layout */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+
+/* main table */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* image box 250x250 */
+.img-box{
+  width:400px;
+  height:400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:400px;
+  max-height:400px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <table class="main-table">
+      <tbody>
+        
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">一般生化檢驗單-B(CM-T2401)<br />
+急診生化檢驗單-B(CM-T2211)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">氨基末端B型排鈉利尿胜肽前體（NT-pro BNP）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43"><75歲：<125 pg/mL<br />
+>75歲：<450 pg/Ml</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/005綠頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">綠頭管/血液<br />
+血液採檢量3-4mL</span></td></tr></table></td>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/006小綠頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">小綠頭管/血液<br />
+血液採檢量1-3mL</span></td></tr></table></td>
+</tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管8-10次。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">免疫螢光酵素分析法(Enzyme Linked Fluorescent Assay；ELFA)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">請參閱量測不確定度</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">生化組#1299</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">急診40分鐘；<br />
+一般件4小時</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 當心室或心房壓力接收器接收到心臟收縮排血面臨重大壓力時，則會立即由心室或心房的肌肉分泌proBNP，而proBNP會再分解為NP以及有N末端的pro- BNP釋放到血液中。其中BNP具有荷爾蒙之活性，可促使腎臟降血液中的鈉鹽及水分排出體外，或者促使腎素 (renin) 下降，導致血管擴張，讓長期承受壓力的心臟變得輕鬆。寶際上具有生理活性僅為BNP的型態，作為心臟壓力指標(Stress marker)。BNP及ANP (atrial natriuretic peptide) 是體內調整血壓及體液平衡的重要因子。而心臟是血液中BNP的主要來源，由 心肌細胞分泌。BNP可以促使動脈與靜脈舒張，可減少心臟周圍的血液流動而不會影響心跳速度，而在循環血流中則可減少靜脈流回心臟之血量，以減輕心臟負荷及症狀。當心室體積擴張及壓力超過負荷時，BNP就會大量分泌。<br />
+2. NT-proBNP含有76個胺基酸，不具有生物活性，但是NT-proBNP血中濃度長期偏高，代表心臟長期承受重大壓力，也反映心臟功能的失調。當左心室功能不良時，NT-ProBNP會被分泌出來，其目的在於補償心室壁的擴張，減少心室的負荷。因此檢測血液中NT-ProBNP的濃度，可幫助診斷是否患有左心室收縮功能不良及心臟衰竭，此生物指標改進了過去臨床實驗室在充血性心臟衰竭的診斷，先前主要仍依賴病患的病史、一般檢查、心電圖、X光，和心臟超音波來診斷。<br />
+3. NT-ProBNP 的濃度和美國紐約心臟學會(NYHA)的心臟衰竭分級呈一定比例增加，故可藉由NT-ProBNP 在血中的濃度清楚判定病人心臟衰竭的嚴重程度，可以將此指標應用於診斷所有型式的充血性心臟衰竭、排除左心室功能不良、測試心臟衰竭的嚴重程度及預後評估、急性冠心症病人的危險分級；也可以應用在高血壓病患的左心室病變、肺栓塞的癒後評估、急性心肌梗塞的癒後評估、主動脈狹窄的危險機率評估、社區篩檢、心臟用藥β-阻斷劑的評估。<br />
+4. NT-proBNP具有90-120分鐘的半衰期，在體內的循環濃度較穩定，故能診斷早期無症狀或輕症的心臟衰竭。在疑似心臟衰竭(HF)的病患體內血漿濃度可比BNP高出3-9倍，因此在偵測上可提供早期診斷的作用。<br />
+5. 呼吸困難症(dyspnea)有可能是充血性心臟衰竭(congestive heart failure)引起。許多檢查，如胸腔X光、EKG等，並不能給一個準確的診斷。當充血性心臟衰竭發生時，心室(心臟的主要抽送血液的部位)必須加倍作工，以供應身體的血液需求。過度加工的心室就會釋放多量的BNP/NT-proBNP，故檢測血液中的BNP/NT-proBNP就可診斷出是否有充血性心臟衰竭症 (CHF)。<br />
+6. BNP 與NT-proBNP主要適應對象是：<br />
+(1)正確診斷各類心臟衰竭<br />
+(2)追蹤心臟衰竭療效與預後<br />
+(3)配合Troponin-I/T與 BNP 以迅速確認心肌梗塞後心臟功能，以正確決定治療方向<br />
+(4)及時排除心臟衰竭，如慢性肺衰竭或敗血症等。可預期 BNP 將是未來診斷心臟衰竭最大利器，地位將類似Troponin-I/T之於心肌梗塞診斷之必要性。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">簽收四小時內，且檢體量足夠者可加驗</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">12193C</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">800</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages</div>
+</div>
+
+</body>
+</html>

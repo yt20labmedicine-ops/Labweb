@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<style>
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
+
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+
+/* layout */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+
+/* main table */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* image box 250x250 */
+.img-box{
+  width:400px;
+  height:400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:400px;
+  max-height:400px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <table class="main-table">
+      <tbody>
+        
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">快篩檢驗單 (CM-T226)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">肺炎病原體多標的聚合酶鏈反應檢測（Pneumonia panel PCR, Filmarray）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">Not detected (N/A)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/013無菌痰盒NEW.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌痰盒/痰液<br />
+痰液採檢量5mL</span></td></tr></table></td>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/026無菌離心管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">無菌離心管/支氣管肺泡沖洗液(BAL)<br />
+BAL採檢量1 mL以上</span></td></tr></table></td>
+</tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 須經抽痰或用引流方式取出下呼吸道檢體。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">Nested multiplex PCR, Filmarray</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">(A)Acinetobacter calcoaceticus-baumannii：1.0 x 10^4 copies/mL<br />
+(B)Enterobacter cloacae complex：1.0 x 10^4 ~ 10^6 copies/mL<br />
+(C)Escherichia coli：1.0 x 10^4 copies/mL<br />
+(D)Haemophilus influenzae：1.0 x 10^4 copies/mL<br />
+(E)Klebsiella aerogenes：1.0 x 10^4 ~ 10^7 copies/mL<br />
+(F)Klebsiella oxytoca：1.0 x 10^4 copies/mL<br />
+(G)Klebsiella pneumoniae group：1.0 x 10^4 ~ 10^5 copies/mL<br />
+(H)Moraxella catarrhalis：1.0 x 10^4 ~ 10^5 copies/mL<br />
+(I)Proteus spp. ：1.0 x 10^4 copies/mL<br />
+(J)Pseudomonas aeruginosa：1.0 x 10^4 copies/mL<br />
+(K)Serratia marcescens：1.0 x 10^4 copies/mL<br />
+(L)Staphylococcus aureus：1.0 x 10^4 ~ 10^5 copies/mL<br />
+(M)Streptococcus agalactiae：1.0 x 10^4 copies/mL<br />
+(N)Streptococcus pneumoniae：1.0 x 10^4 copies/Ml<br />
+(O)Streptococcus pyogenes：1.0 x 10^4 ~ 10^5 copies/mL<br />
+(P)Chlamydophila pneumoniae：6.7 x10^1 ~ 2 x 10^2 copies/mL<br />
+(Q)Leigionella pneumoniaphila：5.0 x 10^2 ~ 1.5 x 10^3 copies/mL<br />
+(R)Mycoplasma pneumoniae：1.2 x 10^3 ~ 3.5 x 10^3 copies/mL<br />
+(S)Adenovirus：1.0 x 10^3 ~ 2.7 x 10^4 copies/mL<br />
+(T)Coronavirus：8.1 x 10^1 ~ 3.0 x 10^4 copies/Ml<br />
+(U)Human Metapneumovirus：5.0 x 10^1 ~ 1.5 x 10^2 copies/mL<br />
+(V)Human Rhinovirus/Enterovirus：5.7 x 10^2 ~ 1.7 x 10^3 copies/mL<br />
+(W)Influenza A：1.0 x 10^2 ~ 1.0 x 10^3 copies/mL<br />
+(X)Influenza B：2.1 ~ 6.3 x 10^2 copies/mL<br />
+(Y)Parainfluenza：1.9 x 10^2 ~ 2.4 x 10^4 copies/mL<br />
+(Z)Respiratory Syncytial Virus：4.3 x 10^2 ~ 1.3 x 10^3 copies/mL</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">鏡檢組#1292<br />
+分生組#1294</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">4小時</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">對疑似下呼吸道感染個體取得的痰液類型的檢體（誘發或咳出的痰液，或是氣管內管抽出物）或支氣管肺泡沖洗液（bronchoalveolar lavage, BAL）類型的檢體（BAL 或 mini-BAL），同時進行檢體中多種細菌、病毒和抗生素抗藥性基因檢測及辨識。可辨識的物種如下：(1) 不動桿菌複合群（Acinetobacter calcoaceticus-baumannii complex） (2) 陰溝腸桿菌複合群（Enterobacter cloacae complex） (3) 大腸桿菌（Escherichia coli） (4) 流行性感冒嗜血桿菌（Haemophilus influenza） (5) 產氣克雷伯氏菌（Klebsiella aerogenes） (6) 產酸克雷伯氏菌（Klebsiella oxytoca） (7) 肺炎克雷伯氏菌群（Klebsiella pneumoniae group）(8) 卡他莫拉氏菌（Moraxella catarrhalis） (9) 變形桿菌屬（Proteus spp.）(10) 綠膿桿菌（Pseudomonas aeruginosa）(11) 黏質沙雷氏菌（Serratia marcescens）(12) 金黃色葡萄球菌（Staphylococcus aureus）(13) 無乳鏈球菌（Streptococcus agalactiae）(14) 肺炎鏈球菌（Streptococcus pneumoniae）(15) 化膿性鏈球菌（Streptococcus pyogenes）(16) CTX-M (17) IMP (18) KPC (19) mecA/C and MREJ (20) NDM (21) OXA-48-like (22) VIM (23) 肺炎披衣菌（Chlamydia pneumoniae）(24) 嗜肺性退伍軍人桿菌（Legionella pneumophila）(25) 肺炎黴漿菌（Mycoplasma pneumoniae）(26) 腺病毒（Adenovirus） (27) 冠狀病毒（Coronavirus） (28) 人類間質肺炎病毒（Human Metapneumovirus）(29) 人類鼻病毒/腸病毒（Human Rhinovirus/Enterovirus）(30) A型流感病毒（Influenza A）(31) B型流感病毒（Influenza B）(32) 副流感病毒（Parainfluenza Virus）(33) 呼吸道融合病毒（Respiratory Syncytial Virus）。<br />
+<br />
+若與其他臨床及流行病學資訊結合使用，針對取自表現出呼吸道感染特徵及 / 或症狀個體的檢體，檢測和鑑定特定病毒及細菌核酸以及從常見細菌分析物中估算核酸相對豐度，可以協助診斷下呼吸道感染。<br />
+不可僅根據本產品的結果進行診斷、治療或其他處置患者的決定此試驗的結果不應做為診斷、治療或其他管理決定的唯一基礎。在呼吸道疾病情況下獲得陰性結果，可能是由於：此試驗沒有檢測的病原體所導致的感染、病原體濃度低於最低檢測極限，或是在細菌分析物中，細菌存在的濃度低於最低的半定量 bin 報告複製數 10^4 copies/mL 。分析物的檢測並不能排除與其他微生物共同感染的可能性，本產品檢測到的病原體可能不是疾病的確切原因。評估可能患有下呼吸道感染的患者時，可能需要搭配其他實驗室測試（例如細菌及病毒培養、免疫螢光法及放射線攝影術）。檢測到細菌核酸可能代表移生（colonizing）或正常呼吸菌叢，可能不代表肺炎的致病原。本產品產生的半定量 bin結果（copies/mL），並不等於 CFU/mL，無法像 CFU/mL 一樣與細菌分析物的數量有穩定關連。對於檢測到多種細菌的檢體，核酸的相對豐度（copies/mL）和透過培養判定的細菌相對豐度（CFU/mL）未必相關。建議以臨床相關性來判定 bin （copies/mL）對於臨床管理的重要性。檢測到的抗生素抗藥性基因，可能與疾病的致病原有關，也可能無關。即使這些抗生素抗藥性基因的測定結果為陰性，也不代表對於對應類別的抗生素具有感受性，因為抗生素抗藥性存在不只一種機制。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">12182C*15</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">15000</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages</div>
+</div>
+
+</body>
+</html>
