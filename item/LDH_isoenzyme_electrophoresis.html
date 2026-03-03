@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<style>
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
+
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+
+/* layout */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+
+/* main table */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* image box 250x250 */
+.img-box{
+  width:400px;
+  height:400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:400px;
+  max-height:400px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <table class="main-table">
+      <tbody>
+        
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+    <td class="auto-style10"><p class="auto-style43">免疫檢驗單(CM-T230)</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+    <td class="auto-style10"><p class="auto-style43">乳酸脫氫酶同功酶電泳（LDH isoenzyme electrophoresis）</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+    <td class="auto-style10"><p class="auto-style43">LD1：17.7-31.5﹪<br />
+LD2＝28.0-35.7﹪<br />
+LD3＝20.8-26.8﹪<br />
+LD4＝ 6.4-12.7﹪<br />
+LD5＝ 4.5-16.0﹪<br />
+LD1/LD2：0.5-1.0<br />
+Total LDH：98-192 IU/L</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+    <td class="auto-style37">
+      <table style="width: 100%">
+<tr>
+<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
+血液採檢量3-4mL</span></td></tr></table></td>
+<td style="width:50%">&nbsp;</td></tr>
+</table>
+    </td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+    <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管5-6次。<br />
+2. 送檢須檢附LDH檢驗報告。<br />
+3. LDH於溶血檢體會偽性上升。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">特定退檢標準</p></td>
+    <td class="auto-style10"><p class="auto-style43">溶血2+</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+    <td class="auto-style10"><p class="auto-style43">電泳分析法</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+    <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(血清免疫組)#11202-305<br />
+責任單位：亞大醫院(檢驗科)#1294</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+    <td class="auto-style10"><p class="auto-style43">委外10工作天</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+    <td class="auto-style10"><p class="auto-style43">LDH(EC 1.1.1.27)酵素存在人類所有組織中，例如：肝臟、骨骼肌、心臟、腎臟皆含高濃度，在人體中廣泛分佈也限制了LDH在診斷上的重要性。測定高濃度之LDH可指出爲何種同功酶的來源，人類血清中LDH有五種同功酶，每一種同功酶會依其電泳之移動速率不同而分開，移動最快(最接近陽極)爲LD1，爲心肌主要同功酶，移動最慢(最接近陰極)爲LD5，爲肝臟或骨骼肌主要同功脢，其他LD2、LD3、LD4與LD1、LD5在各組織會有不同程度的改變。<br />
+LDH同功酶主要用來診斷心肌損傷，正常血清中，LD2之濃度最高，所以LD1/LD2比例＜1，在心肌梗塞，LD1會有程度上的升高，所以LD1/LD2比例會上升，甚至＞1，這種現象稱flipped  LD，心肌梗塞時LD濃度升高持續約12-24小時，高到正常人3-4倍，3-4天達到高峰期。維持2星期的高濃度LD。 完整診斷心肌梗塞是測定LD與CK同功酶，此2項之敏感性與特異性可比其他之酵素更正確診斷心肌梗塞，測定LD與CK同功酶配合其他臨床診斷、心電圖之結果，可百分之百正確診斷心肌梗塞。LD同功酶的測定方法有許多，電泳法比其他提供更多資訊，因爲完全將5種同功酶完全分開，無carryover之危險。</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+    <td class="auto-style10"><p class="auto-style43">09062B</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+    <td class="auto-style10"><p class="auto-style43">450</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td style="width: 50px" class="auto-style5">&nbsp;</td>
+    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
+    <td class="auto-style7" style="width: 50px">&nbsp;</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages</div>
+</div>
+
+</body>
+</html>
