@@ -6,9 +6,6 @@
 <title>檢驗資料總覽</title>
 
 <style>
-/* =========================
-   NHI theme（內嵌，不外掛css）
-   ========================= */
 :root{
   --nhi-primary:#1b7a84;
   --nhi-primary-dark:#0f5f68;
@@ -18,16 +15,12 @@
   --nhi-border:#cfd8dc;
   --nhi-text:#263238;
 }
-
-/* base */
 body{
   margin:0;
   background:var(--nhi-bg);
   font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:var(--nhi-text);
 }
-
-/* top bar */
 .nhi-topbar{
   background:var(--nhi-primary);
   color:#fff;
@@ -48,7 +41,7 @@ body{
 }
 
 /* --- 舊版 auto-style* 對應 NHI --- */
-.auto-style2{ /* 左欄 label */
+.auto-style2{
   text-align:center;
   font-size:15px;
   color:#004d55;
@@ -58,17 +51,14 @@ body{
 }
 .auto-style5{ border:0; background:transparent; }
 .auto-style7{ border:0; background:transparent; }
-
-.auto-style10{ /* 右欄 value */
+.auto-style10{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
   color:var(--nhi-text);
 }
 .auto-style11{ margin:0; }
-.auto-style16{ margin:0; line-height:1.7; }
-
-.auto-style37{ /* 右欄 value（含圖片） */
+.auto-style37{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
@@ -133,8 +123,6 @@ body{
   color:#004d55;
   font-size:13px;
 }
-
-/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -147,7 +135,7 @@ body{
   vertical-align:top;
 }
 
-/* image box 250x250 */
+/* image box 400x400 */
 .img-box{
   width:400px;
   height:400px;
@@ -193,112 +181,133 @@ body{
     <table class="main-table">
       <tbody>
         
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">快篩檢驗單 (CM-T226)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">流行性感冒與呼吸道融合病毒核酸檢驗（Influenza virus& RSV PCR）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">Not detected</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/044VTM病毒核酸採檢組.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">VTM病毒採檢管/ Nasal swab</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">項目代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12183-1</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">醫令代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12183</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">快篩檢驗單 (CM-T226)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">流行性感冒與呼吸道融合病毒核酸檢驗（Influenza virus& RSV PCR）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">Not detected</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/044VTM病毒核酸採檢組.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">VTM病毒採檢管/ Nasal swab</span></td></tr></table></td>
+<td style="width:50%;">&nbsp;</td></tr>
 </table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. 請採鼻咽拭子，置於傳送培養基中送檢。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 請採鼻咽拭子，置於傳送培養基中送檢。</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">multiplex real-time PCR，cobas Liat，Roche</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">multiplex real-time PCR，cobas Liat，Roche</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">靈敏度 FluA：98.7% (95CI：93.0%-99.8%) FluB：99.0% (95CI：94.4%-99.8%) RSV：98.8% (95CI：93.6%-99.8%)<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">靈敏度 FluA：98.7% (95CI：93.0%-99.8%) FluB：99.0% (95CI：94.4%-99.8%) RSV：98.8% (95CI：93.6%-99.8%)<br />
 特異性 FluA：99.1% (95CI：96.7%-99.7%) FluB：99.5% (95CI：97.1%-99.9%) RSV：96.6% (95CI：93.2%-98.4%)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">鏡檢組#1292<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">鏡檢組#1292<br />
 分生組#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">1小時</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">1小時</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">流感病毒感染可從無症狀到很嚴重的情況，視個人免疫力而定，在成人會產生肌肉痛、發燒、身體不適等症狀，在兒童除有成人症狀外常會發高燒、中耳炎、肌炎、咳嗽、有腹痛、嘔吐等腸胃道症狀，流感病毒核酸的檢查可做臨床懷疑受流感病毒感染者之佐證。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">流感病毒感染可從無症狀到很嚴重的情況，視個人免疫力而定，在成人會產生肌肉痛、發燒、身體不適等症狀，在兒童除有成人症狀外常會發高燒、中耳炎、肌炎、咳嗽、有腹痛、嘔吐等腸胃道症狀，流感病毒核酸的檢查可做臨床懷疑受流感病毒感染者之佐證。<br />
 呼吸道融合病毒可引起許多呼吸道疾病，在較大兒童及成人常見上呼吸道感染如感冒、鼻炎、咽喉炎，在小於一歲兒童引起下呼吸道感染如細支氣管炎、肺炎等。呼吸道融合病毒核酸的檢查可做臨床懷疑受呼吸道融合病毒感染者之佐證。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">12183C</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12183C</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">1200</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">1200</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">1500</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
       </tbody>
     </table>
   </div>

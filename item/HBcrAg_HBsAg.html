@@ -6,9 +6,6 @@
 <title>檢驗資料總覽</title>
 
 <style>
-/* =========================
-   NHI theme（內嵌，不外掛css）
-   ========================= */
 :root{
   --nhi-primary:#1b7a84;
   --nhi-primary-dark:#0f5f68;
@@ -18,16 +15,12 @@
   --nhi-border:#cfd8dc;
   --nhi-text:#263238;
 }
-
-/* base */
 body{
   margin:0;
   background:var(--nhi-bg);
   font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:var(--nhi-text);
 }
-
-/* top bar */
 .nhi-topbar{
   background:var(--nhi-primary);
   color:#fff;
@@ -48,7 +41,7 @@ body{
 }
 
 /* --- 舊版 auto-style* 對應 NHI --- */
-.auto-style2{ /* 左欄 label */
+.auto-style2{
   text-align:center;
   font-size:15px;
   color:#004d55;
@@ -58,17 +51,14 @@ body{
 }
 .auto-style5{ border:0; background:transparent; }
 .auto-style7{ border:0; background:transparent; }
-
-.auto-style10{ /* 右欄 value */
+.auto-style10{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
   color:var(--nhi-text);
 }
 .auto-style11{ margin:0; }
-.auto-style16{ margin:0; line-height:1.7; }
-
-.auto-style37{ /* 右欄 value（含圖片） */
+.auto-style37{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
@@ -133,8 +123,6 @@ body{
   color:#004d55;
   font-size:13px;
 }
-
-/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -147,7 +135,7 @@ body{
   vertical-align:top;
 }
 
-/* image box 250x250 */
+/* image box 400x400 */
 .img-box{
   width:400px;
   height:400px;
@@ -193,114 +181,135 @@ body{
     <table class="main-table">
       <tbody>
         
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">特殊生化檢驗單(委外代檢)(CM-T243)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">B型肝炎病毒核心關聯抗原+B型肝炎病毒表面抗原定量（HBcrAg+HBsAg）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">< 3 LogU/mL</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">項目代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">14085</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">醫令代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">14085</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">特殊生化檢驗單(委外代檢)(CM-T243)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">B型肝炎病毒核心關聯抗原+B型肝炎病毒表面抗原定量（HBcrAg+HBsAg）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">< 3 LogU/mL</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
 血液採檢量3-4mL</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
+<td style="width:50%;">&nbsp;</td></tr>
 </table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管5-6次。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管5-6次。<br />
 2. 需分裝血清冷凍送檢。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">Chemiluminescent Enzyme Immunoassy</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">Chemiluminescent Enzyme Immunoassy</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">代檢單位：立人(邱內科)醫事檢驗所(02)2563-9353<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">代檢單位：立人(邱內科)醫事檢驗所(02)2563-9353<br />
 責任單位：亞大醫院(檢驗科)#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">委外5工作天</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">委外5工作天</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">目前已知在感染慢性B型肝炎過程中HBV病毒數量會產生改變，且其病毒量與B肝的感染力及治療後的預後（prognosis）是有相關性的。血清學的標記常用來作為急性或慢性肝炎診斷和/或預防性的指標，可作爲間接檢測肝臟組織内的HBV數量的方法。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">目前已知在感染慢性B型肝炎過程中HBV病毒數量會產生改變，且其病毒量與B肝的感染力及治療後的預後（prognosis）是有相關性的。血清學的標記常用來作為急性或慢性肝炎診斷和/或預防性的指標，可作爲間接檢測肝臟組織内的HBV數量的方法。<br />
 一般會檢測血液中之HBeAg或血液中之HBV-DNA，然而這些方法具有限制因素，當HBeAg與HBeAb形成免疫複合體時，則無法檢測HBeAg。如在服用lamivudine干安能，adefovir干適能或entecavir貝樂克等抗病毒藥物時，使用諸如PCR（聚合酶連鎖反應）和TMA（轉錄介導的擴增）的基因擴增方法，因用藥DNA合成會受到抑制，並會抑制包含HBV DNA的病毒顆粒的釋放，因此，即使肝臟内HBV還存在，使用上述基因擴增法進行的HBV DNA檢測結果有可能呈偽陰性。<br />
 此外，藉由生檢(採集肝組織)測量cccDNA(covalently closed circular DNA；共價閉合環狀DNA)，是直接掌握肝組織中HBV 量的有用方法，但屬於高侵襲性檢查法，因此實施上較為不易。研究報告已指出偵測血清中HBcrAg (HBV核心相關抗原)可用來當作較佳的HBV感染的標記，且不易受抗病毒藥物及免疫複合體的影響，而屬於測量對象的HBcrAg則有(1)HBeAg (2) HBcAg(HBV核心抗原) (3)具有分子量22Kd的p22cr之稱的HBV前核心蛋白三種。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">14085C</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">14085C</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">1800</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">1800</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">2250</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
       </tbody>
     </table>
   </div>

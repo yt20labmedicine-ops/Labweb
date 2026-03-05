@@ -6,9 +6,6 @@
 <title>檢驗資料總覽</title>
 
 <style>
-/* =========================
-   NHI theme（內嵌，不外掛css）
-   ========================= */
 :root{
   --nhi-primary:#1b7a84;
   --nhi-primary-dark:#0f5f68;
@@ -18,16 +15,12 @@
   --nhi-border:#cfd8dc;
   --nhi-text:#263238;
 }
-
-/* base */
 body{
   margin:0;
   background:var(--nhi-bg);
   font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:var(--nhi-text);
 }
-
-/* top bar */
 .nhi-topbar{
   background:var(--nhi-primary);
   color:#fff;
@@ -48,7 +41,7 @@ body{
 }
 
 /* --- 舊版 auto-style* 對應 NHI --- */
-.auto-style2{ /* 左欄 label */
+.auto-style2{
   text-align:center;
   font-size:15px;
   color:#004d55;
@@ -58,17 +51,14 @@ body{
 }
 .auto-style5{ border:0; background:transparent; }
 .auto-style7{ border:0; background:transparent; }
-
-.auto-style10{ /* 右欄 value */
+.auto-style10{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
   color:var(--nhi-text);
 }
 .auto-style11{ margin:0; }
-.auto-style16{ margin:0; line-height:1.7; }
-
-.auto-style37{ /* 右欄 value（含圖片） */
+.auto-style37{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
@@ -133,8 +123,6 @@ body{
   color:#004d55;
   font-size:13px;
 }
-
-/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -147,7 +135,7 @@ body{
   vertical-align:top;
 }
 
-/* image box 250x250 */
+/* image box 400x400 */
 .img-box{
   width:400px;
   height:400px;
@@ -193,113 +181,134 @@ body{
     <table class="main-table">
       <tbody>
         
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">分子醫學特殊檢驗單 (CM-T2A0)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">HCV基因型（HCV genotype）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">Undetected</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/008大紫頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">10mL紫頭管/血液<br />
-血液採檢量8-10mL</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
-</table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">項目代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">1T2016</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管8-10次。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">醫令代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">1T2016</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">分子醫學特殊檢驗單 (CM-T2A0)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">HCV基因型（HCV genotype）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">Undetected</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/008大紫頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">10mL紫頭管/血液<br />
+血液採檢量8-10mL</span></td></tr></table></td>
+<td style="width:50%;">&nbsp;</td></tr>
+</table>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管8-10次。<br />
 2. 1600g離心20分鐘後，分裝血漿冷凍保存。<br />
 3. 此檢驗為自費項目。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">Cobas 4800 Real-time reverse transcription polymerase chain reaction</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">Cobas 4800 Real-time reverse transcription polymerase chain reaction</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(分生組)#11202-304<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(分生組)#11202-304<br />
 責任單位：亞大醫院(檢驗科)#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">委外16工作天</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">委外16工作天</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">本實驗室利用RT-PCR(reverse transcripte-polymerase chain reaction)技術將HCV基因(5' untranslated region)片段呈幾何級數放大，進行PCR產物的基因定序後推斷其患者體內之HCV基因型別。PCR技術具有高度的靈敏度和特異性，經本實驗室確效，最低偵測極限為1000 IU/mL。若患者體內病毒量小於1000 IU/mL則無法偵測到病毒RNA，不能進行其基因型之判讀；若有偵測到HCV病毒的RNA，則經由定序之結果判讀其基因型(1a, 1b, 2a, 2b, 3a, 4)，以作為臨床醫師用藥之的參考資料。C型肝炎病毒具有快速的突變特性，故人體所產生的抗體不具保護性。根據研究顯示，HCV RNA之基因型別與病毒本身之感染性(infectivity)、致病性(pathogenicity)及抗病毒藥物治療效果(antiviral therapy)有很大的相關性。不同的基因型在地球上有不同的地理分佈，在台灣主要是以1b型較常見。其中基因型1為毒性較強者，建議治療期間為一年，治癒率只有約30%。基因型2及3毒性較弱，建議治療期間為半年，可達到80%以上的治癒率。以Interferon-α對基因型2b治療效果最佳，而基因型1b對於Interferon-α的治療較無效，因此偵測HCV基因型可用於評估患者接受治療預後的情形。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">本實驗室利用RT-PCR(reverse transcripte-polymerase chain reaction)技術將HCV基因(5' untranslated region)片段呈幾何級數放大，進行PCR產物的基因定序後推斷其患者體內之HCV基因型別。PCR技術具有高度的靈敏度和特異性，經本實驗室確效，最低偵測極限為1000 IU/mL。若患者體內病毒量小於1000 IU/mL則無法偵測到病毒RNA，不能進行其基因型之判讀；若有偵測到HCV病毒的RNA，則經由定序之結果判讀其基因型(1a, 1b, 2a, 2b, 3a, 4)，以作為臨床醫師用藥之的參考資料。C型肝炎病毒具有快速的突變特性，故人體所產生的抗體不具保護性。根據研究顯示，HCV RNA之基因型別與病毒本身之感染性(infectivity)、致病性(pathogenicity)及抗病毒藥物治療效果(antiviral therapy)有很大的相關性。不同的基因型在地球上有不同的地理分佈，在台灣主要是以1b型較常見。其中基因型1為毒性較強者，建議治療期間為一年，治癒率只有約30%。基因型2及3毒性較弱，建議治療期間為半年，可達到80%以上的治癒率。以Interferon-α對基因型2b治療效果最佳，而基因型1b對於Interferon-α的治療較無效，因此偵測HCV基因型可用於評估患者接受治療預後的情形。</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">3500</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
       </tbody>
     </table>
   </div>

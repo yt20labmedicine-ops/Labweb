@@ -6,9 +6,6 @@
 <title>檢驗資料總覽</title>
 
 <style>
-/* =========================
-   NHI theme（內嵌，不外掛css）
-   ========================= */
 :root{
   --nhi-primary:#1b7a84;
   --nhi-primary-dark:#0f5f68;
@@ -18,16 +15,12 @@
   --nhi-border:#cfd8dc;
   --nhi-text:#263238;
 }
-
-/* base */
 body{
   margin:0;
   background:var(--nhi-bg);
   font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:var(--nhi-text);
 }
-
-/* top bar */
 .nhi-topbar{
   background:var(--nhi-primary);
   color:#fff;
@@ -48,7 +41,7 @@ body{
 }
 
 /* --- 舊版 auto-style* 對應 NHI --- */
-.auto-style2{ /* 左欄 label */
+.auto-style2{
   text-align:center;
   font-size:15px;
   color:#004d55;
@@ -58,17 +51,14 @@ body{
 }
 .auto-style5{ border:0; background:transparent; }
 .auto-style7{ border:0; background:transparent; }
-
-.auto-style10{ /* 右欄 value */
+.auto-style10{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
   color:var(--nhi-text);
 }
 .auto-style11{ margin:0; }
-.auto-style16{ margin:0; line-height:1.7; }
-
-.auto-style37{ /* 右欄 value（含圖片） */
+.auto-style37{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
@@ -133,8 +123,6 @@ body{
   color:#004d55;
   font-size:13px;
 }
-
-/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -147,7 +135,7 @@ body{
   vertical-align:top;
 }
 
-/* image box 250x250 */
+/* image box 400x400 */
 .img-box{
   width:400px;
   height:400px;
@@ -193,24 +181,38 @@ body{
     <table class="main-table">
       <tbody>
         
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">免疫檢驗單 (CM-T232)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">項目代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12029</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">免疫球蛋白M（IgM, Immunoglobulin M）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">醫令代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12029</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">Adults : 40-230 mg/dL<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">免疫檢驗單 (CM-T232)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">免疫球蛋白M（IgM, Immunoglobulin M）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">Adults : 40-230 mg/dL<br />
 0-1 year : 0-145 mg/dL<br />
 1-3 years : 19-146 mg/dL<br />
 4-6 years : 24-210 mg/dL<br />
@@ -219,95 +221,102 @@ body{
 12-13 years : 35-239 mg/dL<br />
 14 15 years : 15-188 mg/dL<br />
 16-19 years : 23-259 mg/dL</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/004黃頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">黃頭管/血液<br />
 血液採檢量3-4mL</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
+<td style="width:50%;">&nbsp;</td></tr>
 </table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管5-6次。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 採血後倒轉試管5-6次。</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">Immuno-turbidimetric assay</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">Immuno-turbidimetric assay</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(血清免疫組)#11202-305<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(血清免疫組)#11202-305<br />
 責任單位：亞大醫院(檢驗科)#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">委外5工作天</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">委外5工作天</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">IgM常被認為是一種大分子球蛋白的抗體，分子量約為900,000，沉澱係數為19S，IgM是由5個 unit 所組成的polymers，彼此間以J-chain連著，佔總免疫球蛋白的6%，IgM不能通過胎盤，是急性疾病期最早出現的抗體，具有活化補體典型途徑之功能，但不會和單核球，嗜中性球結合，是B細胞膜上最主要的免疫球蛋白。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">IgM常被認為是一種大分子球蛋白的抗體，分子量約為900,000，沉澱係數為19S，IgM是由5個 unit 所組成的polymers，彼此間以J-chain連著，佔總免疫球蛋白的6%，IgM不能通過胎盤，是急性疾病期最早出現的抗體，具有活化補體典型途徑之功能，但不會和單核球，嗜中性球結合，是B細胞膜上最主要的免疫球蛋白。<br />
 Polyclonal 增加：肝臟疾病和慢性感染，病毒性肝炎，單核球疾病，原發性膽汁性肝硬變。 Monoclonal 增加：Waldenstrom’s macroglobulinemia。<br />
 IgM 降低於免疫不全症，先天或後天性低珈瑪球蛋白血症 (hypogammaglobuinemia)。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">12029B</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12029B</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">275</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">275</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">344</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
       </tbody>
     </table>
   </div>

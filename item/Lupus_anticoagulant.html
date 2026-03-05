@@ -6,9 +6,6 @@
 <title>檢驗資料總覽</title>
 
 <style>
-/* =========================
-   NHI theme（內嵌，不外掛css）
-   ========================= */
 :root{
   --nhi-primary:#1b7a84;
   --nhi-primary-dark:#0f5f68;
@@ -18,16 +15,12 @@
   --nhi-border:#cfd8dc;
   --nhi-text:#263238;
 }
-
-/* base */
 body{
   margin:0;
   background:var(--nhi-bg);
   font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:var(--nhi-text);
 }
-
-/* top bar */
 .nhi-topbar{
   background:var(--nhi-primary);
   color:#fff;
@@ -48,7 +41,7 @@ body{
 }
 
 /* --- 舊版 auto-style* 對應 NHI --- */
-.auto-style2{ /* 左欄 label */
+.auto-style2{
   text-align:center;
   font-size:15px;
   color:#004d55;
@@ -58,17 +51,14 @@ body{
 }
 .auto-style5{ border:0; background:transparent; }
 .auto-style7{ border:0; background:transparent; }
-
-.auto-style10{ /* 右欄 value */
+.auto-style10{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
   color:var(--nhi-text);
 }
 .auto-style11{ margin:0; }
-.auto-style16{ margin:0; line-height:1.7; }
-
-.auto-style37{ /* 右欄 value（含圖片） */
+.auto-style37{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
@@ -133,8 +123,6 @@ body{
   color:#004d55;
   font-size:13px;
 }
-
-/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -147,7 +135,7 @@ body{
   vertical-align:top;
 }
 
-/* image box 250x250 */
+/* image box 400x400 */
 .img-box{
   width:400px;
   height:400px;
@@ -193,24 +181,38 @@ body{
     <table class="main-table">
       <tbody>
         
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">檢驗科血液特殊檢驗單-2 (CM-5101)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">項目代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">Y450</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">狼瘡抗凝血因子測定（Lupus anticoagulant, DRVVT）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">醫令代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">08126</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">LA1 Screening：31-44 sec<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">檢驗科血液特殊檢驗單-2 (CM-5101)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">狼瘡抗凝血因子測定（Lupus anticoagulant, DRVVT）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">LA1 Screening：31-44 sec<br />
 LA2 Confirmation：30-38 sec<br />
 <br />
 LA Normalize Ratio<br />
@@ -218,103 +220,110 @@ LA not present：<1.2<br />
 LA Weakly Present：>1.2 - 1.5<br />
 LA Moderately Present：>1.5 - 2.0<br />
 LA Strongly Present：> 2.0</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/001藍頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">藍頭管/血液<br />
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/001藍頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">藍頭管/血液<br />
 採檢量2.7mL(至刻線處)</span></td></tr></table></td>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/002小藍頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">小藍頭管/血液<br />
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/002小藍頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">小藍頭管/血液<br />
 採檢量1.8mL(至刻線處)</span></td></tr></table></td>
 </tr>
 </table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. 血液採檢量須至刻線處。採血後倒轉試管3-4次。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 血液採檢量須至刻線處。採血後倒轉試管3-4次。<br />
 2. 離心後分裝血漿至康氏管冷凍保存。<br />
 3. 執行此項檢查時建議不要從內導管採檢，若必須從內導管採集檢體須先使用5mL的saline來沖洗且最前面5mL的血量須丟棄後才能採集血液凝固的檢體。<br />
 4. 建議使用21號或更大針頭(19、20號針頭)採血。<br />
 5. Vitamin K antagonists (VKA)口服抗凝劑可能會造成LA偵測上的誤判，建議於停止治療1-2個禮拜後再測試或等到INR<1.5時再測試。<br />
 6. Low Molecular Weight Heparin(LMWH)：當病人有接受LMWH治療時，建議於最後一劑治療後12小時，再抽血測試。<br />
 7. 溶血之檢體因凝血因子可能已被活化，使得測定秒數偏短；且會干擾儀器end point的測量，故不應被採用。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">Clotting Method</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">Clotting Method</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">請參閱量測不確定度</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">請參閱量測不確定度</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">血液組#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">血液組#1294</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">7工作天</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">7工作天</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. LA是指抗磷脂質或磷脂質-蛋白質覆合體的自體抗體。抗磷脂質的抗體存在時會造成phospholipid-dependent的測試項目(如APTT, DRVVT等)延長。試藥裡的磷脂質、鈣、和RVV會活化檢體裡的Factor X和Factor V。Prothrombin接著被轉換成Thrombin。Thrombin又將Fibrinogen切除為Fibrin clot。當檢體裡有LA存在時, 會與磷脂質結合造成凝固時間延長。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. LA是指抗磷脂質或磷脂質-蛋白質覆合體的自體抗體。抗磷脂質的抗體存在時會造成phospholipid-dependent的測試項目(如APTT, DRVVT等)延長。試藥裡的磷脂質、鈣、和RVV會活化檢體裡的Factor X和Factor V。Prothrombin接著被轉換成Thrombin。Thrombin又將Fibrinogen切除為Fibrin clot。當檢體裡有LA存在時, 會與磷脂質結合造成凝固時間延長。<br />
 2. LA1 screening reagent含有少量的磷脂質，所以當檢體裡有LA存在時，磷脂質很容易就會被結合掉造成凝固時間延長。<br />
 3. 要測試檢體裡是否有抗磷脂質的抗體存在，須使用LA2 confirmation reagent再測一次。因為LA2含有大量的磷脂質，可以中和抗磷脂質的抗體。<br />
 4. 執行LA2測試後計算LA Normalize ratio。 LA Normalize ratio計算 ： LA1 ratio = LA1 /正常人LA1平均秒數 LA2 ratio = LA2 /正常人LA2平均秒數 LA Normalize ratio結果之計算 = LA1 ratio/LA2 ratio</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">08126B</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">08126B</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">700</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">700</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">1000</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
       </tbody>
     </table>
   </div>

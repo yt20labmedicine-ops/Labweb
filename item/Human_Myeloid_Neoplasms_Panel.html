@@ -6,9 +6,6 @@
 <title>檢驗資料總覽</title>
 
 <style>
-/* =========================
-   NHI theme（內嵌，不外掛css）
-   ========================= */
 :root{
   --nhi-primary:#1b7a84;
   --nhi-primary-dark:#0f5f68;
@@ -18,16 +15,12 @@
   --nhi-border:#cfd8dc;
   --nhi-text:#263238;
 }
-
-/* base */
 body{
   margin:0;
   background:var(--nhi-bg);
   font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:var(--nhi-text);
 }
-
-/* top bar */
 .nhi-topbar{
   background:var(--nhi-primary);
   color:#fff;
@@ -48,7 +41,7 @@ body{
 }
 
 /* --- 舊版 auto-style* 對應 NHI --- */
-.auto-style2{ /* 左欄 label */
+.auto-style2{
   text-align:center;
   font-size:15px;
   color:#004d55;
@@ -58,17 +51,14 @@ body{
 }
 .auto-style5{ border:0; background:transparent; }
 .auto-style7{ border:0; background:transparent; }
-
-.auto-style10{ /* 右欄 value */
+.auto-style10{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
   color:var(--nhi-text);
 }
 .auto-style11{ margin:0; }
-.auto-style16{ margin:0; line-height:1.7; }
-
-.auto-style37{ /* 右欄 value（含圖片） */
+.auto-style37{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
@@ -133,8 +123,6 @@ body{
   color:#004d55;
   font-size:13px;
 }
-
-/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -147,7 +135,7 @@ body{
   vertical-align:top;
 }
 
-/* image box 250x250 */
+/* image box 400x400 */
 .img-box{
   width:400px;
   height:400px;
@@ -193,112 +181,133 @@ body{
     <table class="main-table">
       <tbody>
         
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">分子醫學特殊檢驗單 (CM-T2A0)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">人類骨髓性白血病基因體套組（Human Myeloid Neoplasms Panel）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">未發現據臨床意義(Pathogenic/likely pathogenic)且被收錄於已知臨床意義相關的資料庫ClinVar中之突變點。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/008大紫頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">10mL紫頭管/血液<br />
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">項目代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">1T2E87</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">醫令代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">1T2E87</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">分子醫學特殊檢驗單 (CM-T2A0)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">人類骨髓性白血病基因體套組（Human Myeloid Neoplasms Panel）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">未發現據臨床意義(Pathogenic/likely pathogenic)且被收錄於已知臨床意義相關的資料庫ClinVar中之突變點。</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/008大紫頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">10mL紫頭管/血液<br />
 血液採檢量8-10mL</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
+<td style="width:50%;">&nbsp;</td></tr>
 </table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. 請於工作日週一至週五早上11點前新鮮採檢，儘速送檢。請受檢者填妥檢驗同意書及相關資料。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 請於工作日週一至週五早上11點前新鮮採檢，儘速送檢。請受檢者填妥檢驗同意書及相關資料。<br />
 2. 採血後倒轉試管8-10次。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">NGS(次世代定序)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">NGS(次世代定序)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(分生組)#11202-304<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(分生組)#11202-304<br />
 責任單位：亞大醫院(檢驗科)#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">委外23工作天</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">委外23工作天</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">本檢測利用基因體定序(次世代定序)的方法，定序141個血癌常見基因(ABL1, ADA, ANKRD26, ASXL1, ASXL2, ATM, ATRX, BCL6, BCOR, BCORL1, BCR, BIRC3, BLM, BRAF, BRCA1, BRCA2, BRINP3, C17orf97, CALR, CARD11, CBL, CBLB, CBLC, CDKN2A, CEBPA, CHEK2, CREBBP, CRLF2, CSF1R, CSF3R, CTCF, CUX1, DAXX, DDX41, DNM2, DNMT1, DNMT3A, EED, EGFR, ELANE, EP300, ETNK1, ETV6, EZH2, FAM154B, FAM47A, FAS, FBXW7, FLRT2, FLT3, GATA1, GATA2, GJB3, GNAS, HNRNPK, HRAS, IDH1, IDH2, IKZF1, IKZF3, IL7R, JAK1, JAK2, JAK3, KAT6A, KCNA4, KCNK13, KDM6A, KDR, KIT, KLHDC8B, KLHL6, KMT2A, KMT2C, KRAS, LRRC4, LUC7L2, MAP2K1, MLH1, MPL, MSH2, MSH6, MYC, MYD88, NBN, NF1, NOTCH1, NPAT, NPM1, NRAS, NSD1, NTRK3, OR13H1, OR8B12, P2RY2, PAX5, PCDHB1, PDGFRA, PHF6, PML, PMS2, PRAMEF2, PRF1, PRPF40B, PRPF8, PTEN, PTPN11, RAD21, RB1, RELN, RUNX1, SETBP1, SF1, SF3A1, SF3B1, SH2B3, SH2D1A, SMARCB1, SMC1A, SMC3, SRP72, SRSF2, STAG2, STAT3, STXBP2, SUZ12, TAL1, TERC, TERT, TET2, TNFRSF13B, TP53, TPMT, TUBA3C, U2AF1, U2AF2, WAS, WRN, WT1, XPO1, ZRSR2)，這些基因與血癌的形成、治療及預後有關，檢測結果除了可做為用藥治療的指南外，其中病人特有的突變，將可作為病人預後的標記，這樣的標記將比傳統以蛋白質的標記更具特異性，而且更加敏感及精準。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">本檢測利用基因體定序(次世代定序)的方法，定序141個血癌常見基因(ABL1, ADA, ANKRD26, ASXL1, ASXL2, ATM, ATRX, BCL6, BCOR, BCORL1, BCR, BIRC3, BLM, BRAF, BRCA1, BRCA2, BRINP3, C17orf97, CALR, CARD11, CBL, CBLB, CBLC, CDKN2A, CEBPA, CHEK2, CREBBP, CRLF2, CSF1R, CSF3R, CTCF, CUX1, DAXX, DDX41, DNM2, DNMT1, DNMT3A, EED, EGFR, ELANE, EP300, ETNK1, ETV6, EZH2, FAM154B, FAM47A, FAS, FBXW7, FLRT2, FLT3, GATA1, GATA2, GJB3, GNAS, HNRNPK, HRAS, IDH1, IDH2, IKZF1, IKZF3, IL7R, JAK1, JAK2, JAK3, KAT6A, KCNA4, KCNK13, KDM6A, KDR, KIT, KLHDC8B, KLHL6, KMT2A, KMT2C, KRAS, LRRC4, LUC7L2, MAP2K1, MLH1, MPL, MSH2, MSH6, MYC, MYD88, NBN, NF1, NOTCH1, NPAT, NPM1, NRAS, NSD1, NTRK3, OR13H1, OR8B12, P2RY2, PAX5, PCDHB1, PDGFRA, PHF6, PML, PMS2, PRAMEF2, PRF1, PRPF40B, PRPF8, PTEN, PTPN11, RAD21, RB1, RELN, RUNX1, SETBP1, SF1, SF3A1, SF3B1, SH2B3, SH2D1A, SMARCB1, SMC1A, SMC3, SRP72, SRSF2, STAG2, STAT3, STXBP2, SUZ12, TAL1, TERC, TERT, TET2, TNFRSF13B, TP53, TPMT, TUBA3C, U2AF1, U2AF2, WAS, WRN, WT1, XPO1, ZRSR2)，這些基因與血癌的形成、治療及預後有關，檢測結果除了可做為用藥治療的指南外，其中病人特有的突變，將可作為病人預後的標記，這樣的標記將比傳統以蛋白質的標記更具特異性，而且更加敏感及精準。</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">N/A</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">N/A</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">35000</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
       </tbody>
     </table>
   </div>
