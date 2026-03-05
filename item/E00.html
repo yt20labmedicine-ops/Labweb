@@ -1,126 +1,204 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="utf-8" />
-<title>E</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+
 <style>
-/* index 自帶樣式（不外掛css） */
-body { font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif; margin:0; background:#f6f7f8; }
-table { width:100%; border-collapse:collapse; background:#fff; }
-.hint { background:#0f5f68; color:#fff; text-align:center; padding:10px; font-size:18px; }
-th { background:#1b7a84; color:#fff; border:1px solid #cfd8dc; padding:12px; }
-td { border:1px solid #cfd8dc; padding:10px; text-align:center; font-size:15px; }
-.auto-style10 { color:#005c66; }
-.auto-style17 { color:#003d45; }
-a { text-decoration:none; color:inherit; display:block; }
-tr:hover td { background:#eef7f8; }
+:root{
+--nhi-primary:#1b7a84;
+--nhi-head:#e6f2f3;
+--nhi-border:#cfd8dc;
+--nhi-bg:#f4f6f6;
+--nhi-text:#263238;
+}
+body{
+margin:0;
+background:var(--nhi-bg);
+font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+color:var(--nhi-text);
+}
+.nhi-topbar{
+background:var(--nhi-primary);
+color:#fff;
+padding:14px 18px;
+font-weight:800;
+font-size:18px;
+}
+.wrap{
+max-width:1100px;
+margin:18px auto;
+padding:0 12px;
+}
+.card{
+background:#fff;
+border:1px solid var(--nhi-border);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.cardhead{
+padding:10px 14px;
+border-bottom:1px solid var(--nhi-border);
+font-weight:800;
+color:#004d55;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+th{
+background:var(--nhi-head);
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:15px;
+color:#004d55;
+}
+td.cell{
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:14px;
+}
+tr:hover td.cell{
+background:#f0fbfc;
+}
+.link a{
+text-decoration:none;
+color:#0b5f86;
+font-weight:700;
+}
+.link a:hover{
+text-decoration:underline;
+}
+.footer{
+text-align:center;
+font-size:12px;
+color:#607d8b;
+margin-top:10px;
+}
 </style>
 </head>
+
 <body>
-<table>
-<tr><td class="hint" colspan="2">快速搜尋請按鍵盤[Ctrl]+[F]輸入關鍵字查詢</td></tr>
-<tr><th>檢驗項目英文名稱</th><th>檢驗項目中文名稱</th></tr>
+<div class="nhi-topbar">亞洲大學附屬醫院 檢驗科</div>
 
+<div class="wrap">
+  <div class="card">
+    <div class="cardhead"></div>
+
+    <table>
+      <tr>
+        <th>檢驗項目英文名稱</th>
+        <th>檢驗項目中文名稱</th>
+      </tr>
+      
 <tr>
-  <td class="auto-style10"><a href="E2.html">E2, Estradiol</a></td>
-  <td class="auto-style17"><a href="E2.html">二氫基雌激素/雌二醇</a></td>
+  <td class="cell link"><a href="E2.html">E2, Estradiol</a></td>
+  <td class="cell link"><a href="E2.html">二氫基雌激素/雌二醇</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EBV_EA+EBNA-1_IgA.html">EBV EA+EBNA-1 IgA</a></td>
-  <td class="auto-style17"><a href="EBV_EA+EBNA-1_IgA.html">EB病毒早期抗原+EB病毒核抗原-1 IgA</a></td>
+  <td class="cell link"><a href="EBV_EA+EBNA-1_IgA.html">EBV EA+EBNA-1 IgA</a></td>
+  <td class="cell link"><a href="EBV_EA+EBNA-1_IgA.html">EB病毒早期抗原+EB病毒核抗原-1 IgA</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EBV_NA_IgG.html">EBV NA IgG</a></td>
-  <td class="auto-style17"><a href="EBV_NA_IgG.html">EB病毒核抗原抗體</a></td>
+  <td class="cell link"><a href="EBV_NA_IgG.html">EBV NA IgG</a></td>
+  <td class="cell link"><a href="EBV_NA_IgG.html">EB病毒核抗原抗體</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EBV_PCR.html">EBV PCR, Epstein Barr virus PCR</a></td>
-  <td class="auto-style17"><a href="EBV_PCR.html">EB病毒基因檢查</a></td>
+  <td class="cell link"><a href="EBV_PCR.html">EBV PCR, Epstein Barr virus PCR</a></td>
+  <td class="cell link"><a href="EBV_PCR.html">EB病毒基因檢查</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EBV_VCA_IgA__IgG__IgM.html">EBV VCA IgA/IgG/IgM</a></td>
-  <td class="auto-style17"><a href="EBV_VCA_IgA__IgG__IgM.html">EB病毒衣殼抗原之IgA抗體</a></td>
+  <td class="cell link"><a href="EBV_VCA_IgA__IgG__IgM.html">EBV VCA IgA/IgG/IgM</a></td>
+  <td class="cell link"><a href="EBV_VCA_IgA__IgG__IgM.html">EB病毒衣殼抗原之IgA抗體</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EBV_Viral_Load.html">EBV Viral Load, Epstein Barr virus viral load</a></td>
-  <td class="auto-style17"><a href="EBV_Viral_Load.html">EB病毒定量檢驗</a></td>
+  <td class="cell link"><a href="EBV_Viral_Load.html">EBV Viral Load, Epstein Barr virus viral load</a></td>
+  <td class="cell link"><a href="EBV_Viral_Load.html">EB病毒定量檢驗</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="ECP.html">ECP, Eosinophilic cation protein</a></td>
-  <td class="auto-style17"><a href="ECP.html">嗜伊紅血球陽離子蛋白</a></td>
+  <td class="cell link"><a href="ECP.html">ECP, Eosinophilic cation protein</a></td>
+  <td class="cell link"><a href="ECP.html">嗜伊紅血球陽離子蛋白</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EGFR_exon18-21_mutation_analysis.html">EGFR exon18-21 mutation analysis</a></td>
-  <td class="auto-style17"><a href="EGFR_exon18-21_mutation_analysis.html">EGFR基因突變分析</a></td>
+  <td class="cell link"><a href="EGFR_exon18-21_mutation_analysis.html">EGFR exon18-21 mutation analysis</a></td>
+  <td class="cell link"><a href="EGFR_exon18-21_mutation_analysis.html">EGFR基因突變分析</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Elution_and_antibody_identification.html">Elution and antibody identification</a></td>
-  <td class="auto-style17"><a href="Elution_and_antibody_identification.html">抗體沖出與鑑定</a></td>
+  <td class="cell link"><a href="Elution_and_antibody_identification.html">Elution and antibody identification</a></td>
+  <td class="cell link"><a href="Elution_and_antibody_identification.html">抗體沖出與鑑定</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Endotracheal_aspiration_culture.html">Endotracheal aspiration culture</a></td>
-  <td class="auto-style17"><a href="Endotracheal_aspiration_culture.html">痰液半定量培養</a></td>
+  <td class="cell link"><a href="Endotracheal_aspiration_culture.html">Endotracheal aspiration culture</a></td>
+  <td class="cell link"><a href="Endotracheal_aspiration_culture.html">痰液半定量培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Enterovirus_culture.html">Enterovirus culture</a></td>
-  <td class="auto-style17"><a href="Enterovirus_culture.html">腸病毒培養</a></td>
+  <td class="cell link"><a href="Enterovirus_culture.html">Enterovirus culture</a></td>
+  <td class="cell link"><a href="Enterovirus_culture.html">腸病毒培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Eosinophil_Count.html">Eosinophil Count</a></td>
-  <td class="auto-style17"><a href="Eosinophil_Count.html">嗜酸性球計數</a></td>
+  <td class="cell link"><a href="Eosinophil_Count.html">Eosinophil Count</a></td>
+  <td class="cell link"><a href="Eosinophil_Count.html">嗜酸性球計數</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EPO.html">EPO, Erythropoietin</a></td>
-  <td class="auto-style17"><a href="EPO.html">紅血球生成因子</a></td>
+  <td class="cell link"><a href="EPO.html">EPO, Erythropoietin</a></td>
+  <td class="cell link"><a href="EPO.html">紅血球生成因子</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="ESR.html">ESR, Erythrocyte Sedimentation Rate</a></td>
-  <td class="auto-style17"><a href="ESR.html">紅血球沉降速率</a></td>
+  <td class="cell link"><a href="ESR.html">ESR, Erythrocyte Sedimentation Rate</a></td>
+  <td class="cell link"><a href="ESR.html">紅血球沉降速率</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Ethyl_alcohol.html">Ethyl alcohol</a></td>
-  <td class="auto-style17"><a href="Ethyl_alcohol.html">乙醇：一般病患/酒後就醫非駕駛/酒後駕駛</a></td>
+  <td class="cell link"><a href="Ethyl_alcohol.html">Ethyl alcohol</a></td>
+  <td class="cell link"><a href="Ethyl_alcohol.html">乙醇：一般病患/酒後就醫非駕駛/酒後駕駛</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EV_RT-PCR.html">EV RT-PCR, Enterovirus RT-PCR</a></td>
-  <td class="auto-style17"><a href="EV_RT-PCR.html">腸病毒反轉錄聚合脢鏈反應</a></td>
+  <td class="cell link"><a href="EV_RT-PCR.html">EV RT-PCR, Enterovirus RT-PCR</a></td>
+  <td class="cell link"><a href="EV_RT-PCR.html">腸病毒反轉錄聚合脢鏈反應</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="EV71_IgM_Rapid_Test.html">EV71 IgM Rapid Test</a></td>
-  <td class="auto-style17"><a href="EV71_IgM_Rapid_Test.html">腸病毒71型IgM抗體快速篩檢</a></td>
+  <td class="cell link"><a href="EV71_IgM_Rapid_Test.html">EV71 IgM Rapid Test</a></td>
+  <td class="cell link"><a href="EV71_IgM_Rapid_Test.html">腸病毒71型IgM抗體快速篩檢</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Everolimus.html">Everolimus, Certican</a></td>
-  <td class="auto-style17"><a href="Everolimus.html">器官移植之免疫抑制劑</a></td>
+  <td class="cell link"><a href="Everolimus.html">Everolimus, Certican</a></td>
+  <td class="cell link"><a href="Everolimus.html">器官移植之免疫抑制劑</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Eye_culture.html">Eye culture</a></td>
-  <td class="auto-style17"><a href="Eye_culture.html">眼培養</a></td>
+  <td class="cell link"><a href="Eye_culture.html">Eye culture</a></td>
+  <td class="cell link"><a href="Eye_culture.html">眼培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Eye_TB_culture.html">Eye TB culture</a></td>
-  <td class="auto-style17"><a href="Eye_TB_culture.html">眼結核菌培養</a></td>
+  <td class="cell link"><a href="Eye_TB_culture.html">Eye TB culture</a></td>
+  <td class="cell link"><a href="Eye_TB_culture.html">眼結核菌培養</a></td>
 </tr>
 
-</table>
+    </table>
+  </div>
+
+  <div class="footer">快速搜尋可使用 Ctrl+F</div>
+</div>
 </body>
 </html>

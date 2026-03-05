@@ -1,93 +1,171 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="utf-8" />
-<title>G</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+
 <style>
-/* index 自帶樣式（不外掛css） */
-body { font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif; margin:0; background:#f6f7f8; }
-table { width:100%; border-collapse:collapse; background:#fff; }
-.hint { background:#0f5f68; color:#fff; text-align:center; padding:10px; font-size:18px; }
-th { background:#1b7a84; color:#fff; border:1px solid #cfd8dc; padding:12px; }
-td { border:1px solid #cfd8dc; padding:10px; text-align:center; font-size:15px; }
-.auto-style10 { color:#005c66; }
-.auto-style17 { color:#003d45; }
-a { text-decoration:none; color:inherit; display:block; }
-tr:hover td { background:#eef7f8; }
+:root{
+--nhi-primary:#1b7a84;
+--nhi-head:#e6f2f3;
+--nhi-border:#cfd8dc;
+--nhi-bg:#f4f6f6;
+--nhi-text:#263238;
+}
+body{
+margin:0;
+background:var(--nhi-bg);
+font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+color:var(--nhi-text);
+}
+.nhi-topbar{
+background:var(--nhi-primary);
+color:#fff;
+padding:14px 18px;
+font-weight:800;
+font-size:18px;
+}
+.wrap{
+max-width:1100px;
+margin:18px auto;
+padding:0 12px;
+}
+.card{
+background:#fff;
+border:1px solid var(--nhi-border);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.cardhead{
+padding:10px 14px;
+border-bottom:1px solid var(--nhi-border);
+font-weight:800;
+color:#004d55;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+th{
+background:var(--nhi-head);
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:15px;
+color:#004d55;
+}
+td.cell{
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:14px;
+}
+tr:hover td.cell{
+background:#f0fbfc;
+}
+.link a{
+text-decoration:none;
+color:#0b5f86;
+font-weight:700;
+}
+.link a:hover{
+text-decoration:underline;
+}
+.footer{
+text-align:center;
+font-size:12px;
+color:#607d8b;
+margin-top:10px;
+}
 </style>
 </head>
+
 <body>
-<table>
-<tr><td class="hint" colspan="2">快速搜尋請按鍵盤[Ctrl]+[F]輸入關鍵字查詢</td></tr>
-<tr><th>檢驗項目英文名稱</th><th>檢驗項目中文名稱</th></tr>
+<div class="nhi-topbar">亞洲大學附屬醫院 檢驗科</div>
 
+<div class="wrap">
+  <div class="card">
+    <div class="cardhead"></div>
+
+    <table>
+      <tr>
+        <th>檢驗項目英文名稱</th>
+        <th>檢驗項目中文名稱</th>
+      </tr>
+      
 <tr>
-  <td class="auto-style10"><a href="G-6-PD_quantiative.html">G-6-PD quantiative, glucose-6-phosphate Dehydrogenase</a></td>
-  <td class="auto-style17"><a href="G-6-PD_quantiative.html">葡萄糖-6-磷酸脫氫酶定量</a></td>
+  <td class="cell link"><a href="G-6-PD_quantiative.html">G-6-PD quantiative, glucose-6-phosphate Dehydrogenase</a></td>
+  <td class="cell link"><a href="G-6-PD_quantiative.html">葡萄糖-6-磷酸脫氫酶定量</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Gastrin.html">Gastrin</a></td>
-  <td class="auto-style17"><a href="Gastrin.html">胃泌激素</a></td>
+  <td class="cell link"><a href="Gastrin.html">Gastrin</a></td>
+  <td class="cell link"><a href="Gastrin.html">胃泌激素</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Gastrointestinal_panel_PCR.html">Gastrointestinal panel PCR</a></td>
-  <td class="auto-style17"><a href="Gastrointestinal_panel_PCR.html">腸胃道病原體多標的聚合酶鏈反應檢測</a></td>
+  <td class="cell link"><a href="Gastrointestinal_panel_PCR.html">Gastrointestinal panel PCR</a></td>
+  <td class="cell link"><a href="Gastrointestinal_panel_PCR.html">腸胃道病原體多標的聚合酶鏈反應檢測</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Gaucher_disease_gene_confirm.html">Gaucher disease gene confirm</a></td>
-  <td class="auto-style17"><a href="Gaucher_disease_gene_confirm.html">篩檢-家族高雪氏症</a></td>
+  <td class="cell link"><a href="Gaucher_disease_gene_confirm.html">Gaucher disease gene confirm</a></td>
+  <td class="cell link"><a href="Gaucher_disease_gene_confirm.html">篩檢-家族高雪氏症</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Gaucher_disease_Screening.html">Gaucher disease Screening</a></td>
-  <td class="auto-style17"><a href="Gaucher_disease_Screening.html">篩檢-高雪氏症</a></td>
+  <td class="cell link"><a href="Gaucher_disease_Screening.html">Gaucher disease Screening</a></td>
+  <td class="cell link"><a href="Gaucher_disease_Screening.html">篩檢-高雪氏症</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Gaucher_disease_whole_blood_enzyme_confirm.html">Gaucher disease whole blood enzyme confirm</a></td>
-  <td class="auto-style17"><a href="Gaucher_disease_whole_blood_enzyme_confirm.html">追蹤-高雪氏症</a></td>
+  <td class="cell link"><a href="Gaucher_disease_whole_blood_enzyme_confirm.html">Gaucher disease whole blood enzyme confirm</a></td>
+  <td class="cell link"><a href="Gaucher_disease_whole_blood_enzyme_confirm.html">追蹤-高雪氏症</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Group_B_Streptococcus_Culture.html">GBS, Group B Streptococcus Culture</a></td>
-  <td class="auto-style17"><a href="Group_B_Streptococcus_Culture.html">乙型鏈球菌篩檢</a></td>
+  <td class="cell link"><a href="Group_B_Streptococcus_Culture.html">GBS, Group B Streptococcus Culture</a></td>
+  <td class="cell link"><a href="Group_B_Streptococcus_Culture.html">乙型鏈球菌篩檢</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="GGT.html">GGT, γ-GT, Gamma-Glutamyl transferase</a></td>
-  <td class="auto-style17"><a href="GGT.html">γ-麩胺酸轉移酵素</a></td>
+  <td class="cell link"><a href="GGT.html">GGT, γ-GT, Gamma-Glutamyl transferase</a></td>
+  <td class="cell link"><a href="GGT.html">γ-麩胺酸轉移酵素</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Globulin.html">Globulin</a></td>
-  <td class="auto-style17"><a href="Globulin.html">球蛋白</a></td>
+  <td class="cell link"><a href="Globulin.html">Globulin</a></td>
+  <td class="cell link"><a href="Globulin.html">球蛋白</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Glucose.html">Glucose</a></td>
-  <td class="auto-style17"><a href="Glucose.html">葡萄糖</a></td>
+  <td class="cell link"><a href="Glucose.html">Glucose</a></td>
+  <td class="cell link"><a href="Glucose.html">葡萄糖</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Glycated_Albumin.html">Glycated Albumin</a></td>
-  <td class="auto-style17"><a href="Glycated_Albumin.html">醣化白蛋白</a></td>
+  <td class="cell link"><a href="Glycated_Albumin.html">Glycated Albumin</a></td>
+  <td class="cell link"><a href="Glycated_Albumin.html">醣化白蛋白</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Gonococcus_Culture.html">Gonococcus and Candida Culture
+  <td class="cell link"><a href="Gonococcus_Culture.html">Gonococcus and Candida Culture
 Gonococcus Culture</a></td>
-  <td class="auto-style17"><a href="Gonococcus_Culture.html">淋病雙球菌及念珠菌培養
+  <td class="cell link"><a href="Gonococcus_Culture.html">淋病雙球菌及念珠菌培養
 淋病雙球菌培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Grams_Stain.html">Gram's Stain</a></td>
-  <td class="auto-style17"><a href="Grams_Stain.html">革蘭式染色</a></td>
+  <td class="cell link"><a href="Grams_Stain.html">Gram's Stain</a></td>
+  <td class="cell link"><a href="Grams_Stain.html">革蘭式染色</a></td>
 </tr>
 
-</table>
+    </table>
+  </div>
+
+  <div class="footer">快速搜尋可使用 Ctrl+F</div>
+</div>
 </body>
 </html>

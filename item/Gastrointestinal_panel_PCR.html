@@ -6,9 +6,6 @@
 <title>檢驗資料總覽</title>
 
 <style>
-/* =========================
-   NHI theme（內嵌，不外掛css）
-   ========================= */
 :root{
   --nhi-primary:#1b7a84;
   --nhi-primary-dark:#0f5f68;
@@ -18,16 +15,12 @@
   --nhi-border:#cfd8dc;
   --nhi-text:#263238;
 }
-
-/* base */
 body{
   margin:0;
   background:var(--nhi-bg);
   font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
   color:var(--nhi-text);
 }
-
-/* top bar */
 .nhi-topbar{
   background:var(--nhi-primary);
   color:#fff;
@@ -48,7 +41,7 @@ body{
 }
 
 /* --- 舊版 auto-style* 對應 NHI --- */
-.auto-style2{ /* 左欄 label */
+.auto-style2{
   text-align:center;
   font-size:15px;
   color:#004d55;
@@ -58,17 +51,14 @@ body{
 }
 .auto-style5{ border:0; background:transparent; }
 .auto-style7{ border:0; background:transparent; }
-
-.auto-style10{ /* 右欄 value */
+.auto-style10{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
   color:var(--nhi-text);
 }
 .auto-style11{ margin:0; }
-.auto-style16{ margin:0; line-height:1.7; }
-
-.auto-style37{ /* 右欄 value（含圖片） */
+.auto-style37{
   border:1px solid var(--nhi-border);
   background:#fff;
   font-size:15px;
@@ -133,8 +123,6 @@ body{
   color:#004d55;
   font-size:13px;
 }
-
-/* main table */
 .main-table{
   width:100%;
   border-collapse:collapse;
@@ -147,7 +135,7 @@ body{
   vertical-align:top;
 }
 
-/* image box 250x250 */
+/* image box 400x400 */
 .img-box{
   width:400px;
   height:400px;
@@ -193,59 +181,73 @@ body{
     <table class="main-table">
       <tbody>
         
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
-    <td class="auto-style10"><p class="auto-style43">快篩檢驗單 (CM-T226)</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
-    <td class="auto-style10"><p class="auto-style43">腸胃道病原體多標的聚合酶鏈反應檢測（Gastrointestinal panel PCR）</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
-    <td class="auto-style10"><p class="auto-style43">Not detected</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
-
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
-    <td class="auto-style37">
-      <table style="width: 100%">
 <tr>
-<td style="width:50%"><table style="width: 100%"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/052糞便PCR管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">糞便PCR管/糞便</span></td></tr></table></td>
-<td style="width:50%">&nbsp;</td></tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">項目代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">GAS_PAN</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">醫令代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12182/12183</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">快篩檢驗單 (CM-T226)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">腸胃道病原體多標的聚合酶鏈反應檢測（Gastrointestinal panel PCR）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">Not detected</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/052糞便PCR管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">糞便PCR管/糞便</span></td></tr></table></td>
+<td style="width:50%;">&nbsp;</td></tr>
 </table>
-    </td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
-    <td class="auto-style10"><p class="auto-style43">1. 以棉棒沾取糞便4-5次，放入糞便PCR管內；折斷棉棒後鎖緊蓋口，以防溢漏。<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 以棉棒沾取糞便4-5次，放入糞便PCR管內；折斷棉棒後鎖緊蓋口，以防溢漏。<br />
 2. 無法立即送檢請冷藏保存，並於24小時內送檢。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
-    <td class="auto-style10"><p class="auto-style43">Nested multiplex PCR, Filmarray</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">Nested multiplex PCR, Filmarray</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
-    <td class="auto-style10"><p class="auto-style43">(A)Campylobacter：敏感度 97.1% 特異性 98.4%<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">(A)Campylobacter：敏感度 97.1% 特異性 98.4%<br />
 (B)Clostridioides difficile (toxin A/B)：敏感度 98.8% 特異性 97.1%<br />
 (C)Plesiomonas shigelloides：敏感度 100% 特異性 99.0%<br />
 (D)Salmonella：敏感度 100% 特異性 99.6%<br />
@@ -267,67 +269,67 @@ body{
 (T)Norovirus GI/GII：敏感度 94.5% 特異性 98.8%<br />
 (U)Rotavirus A：敏感度 100% 特異性 99.2%<br />
 (V)Sapovirus ：敏感度 100% 特異性 99.1%</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
-    <td class="auto-style10"><p class="auto-style43">鏡檢組#1292<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">鏡檢組#1292<br />
 分生組#1294</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
-    <td class="auto-style10"><p class="auto-style43">4小時</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">4小時</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
-    <td class="auto-style10"><p class="auto-style43">對於有腸胃道感染徵兆及/或症狀採集並裝於 Cary Blair 運送培養基中的糞便檢體，同時進行檢體中多種細菌、病毒和寄生蟲核酸定性檢測及辨識。可辨識的物種如下：(1) 曲狀桿菌(空腸曲狀桿菌/大腸曲狀桿菌/烏普薩拉曲狀桿菌) (Campylobacter (C. jejuni/C. coli/C. upsaliensis)) (2) 困難梭狀芽孢桿菌(C. difficile)毒素 A/B (Clostridium difficile (C. difficile) toxin A/B) (3) 類志賀鄰單胞菌(Plesiomonas shigelloides) (4) 沙門氏菌(Salmonella) (5) 弧菌(腸炎弧菌/創傷弧菌/霍亂弧菌)，包括專一辨識霍亂弧菌(Vibrio (V. parahaemolyticus/V. vulnificus/V. cholerae), including specific identification of Vibrio cholera) (6) 小腸結腸耶氏菌(Yersinia enterocolitica)  (7) 腸聚集性大腸桿菌(EAEC)(Enteroaggregative Escherichia coli (EAEC)) (8) 腸致病性大腸桿菌(EPEC)(Enteropathogenic Escherichia coli (EPEC)) (9) 腸毒素產生性大腸桿菌(ETEC) lt/st (Enterotoxigenic Escherichia coli (ETEC) lt/st) (10) 志賀毒性大腸桿菌(STEC) stx1/stx2 (包括專一辨識 STEC 中的大腸桿菌 O157 血清群) (Shiga-like toxin-producing Escherichia coli (STEC) stx1/stx2 (including specific identification of the E. coli O157 serogroup within STEC)) (11) 志賀氏桿菌/腸侵襲性大腸桿菌(EIEC) (Shigella/ Enteroinvasive Escherichia coli (EIEC)) (12) 隱孢子蟲(Cryptosporidium) (13) 卡耶坦環孢子蟲(Cyclospora cayetanensis) (14) 痢疾阿米巴(Entamoeba histolytica) (15) 梨形鞭毛蟲(亦稱為腸賈第鞭毛蟲以及十二指腸賈第鞭毛蟲) (Giardia lamblia (also known as G. intestinalis and G. duodenalis)) (16) 腺病毒 F 40/41 (Adenovirus F 40/41) (17) 星狀病毒 (Astrovirus) (18) 諾羅病毒 GI/GII (Norovirus GI/GII) (19) 輪狀病毒 A (Rotavirus A) (20) 沙波病毒(基因群 I、II、IV 及 V) (Sapovirus (Genogroups I, II, IV, and V))<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">對於有腸胃道感染徵兆及/或症狀採集並裝於 Cary Blair 運送培養基中的糞便檢體，同時進行檢體中多種細菌、病毒和寄生蟲核酸定性檢測及辨識。可辨識的物種如下：(1) 曲狀桿菌(空腸曲狀桿菌/大腸曲狀桿菌/烏普薩拉曲狀桿菌) (Campylobacter (C. jejuni/C. coli/C. upsaliensis)) (2) 困難梭狀芽孢桿菌(C. difficile)毒素 A/B (Clostridium difficile (C. difficile) toxin A/B) (3) 類志賀鄰單胞菌(Plesiomonas shigelloides) (4) 沙門氏菌(Salmonella) (5) 弧菌(腸炎弧菌/創傷弧菌/霍亂弧菌)，包括專一辨識霍亂弧菌(Vibrio (V. parahaemolyticus/V. vulnificus/V. cholerae), including specific identification of Vibrio cholera) (6) 小腸結腸耶氏菌(Yersinia enterocolitica)  (7) 腸聚集性大腸桿菌(EAEC)(Enteroaggregative Escherichia coli (EAEC)) (8) 腸致病性大腸桿菌(EPEC)(Enteropathogenic Escherichia coli (EPEC)) (9) 腸毒素產生性大腸桿菌(ETEC) lt/st (Enterotoxigenic Escherichia coli (ETEC) lt/st) (10) 志賀毒性大腸桿菌(STEC) stx1/stx2 (包括專一辨識 STEC 中的大腸桿菌 O157 血清群) (Shiga-like toxin-producing Escherichia coli (STEC) stx1/stx2 (including specific identification of the E. coli O157 serogroup within STEC)) (11) 志賀氏桿菌/腸侵襲性大腸桿菌(EIEC) (Shigella/ Enteroinvasive Escherichia coli (EIEC)) (12) 隱孢子蟲(Cryptosporidium) (13) 卡耶坦環孢子蟲(Cyclospora cayetanensis) (14) 痢疾阿米巴(Entamoeba histolytica) (15) 梨形鞭毛蟲(亦稱為腸賈第鞭毛蟲以及十二指腸賈第鞭毛蟲) (Giardia lamblia (also known as G. intestinalis and G. duodenalis)) (16) 腺病毒 F 40/41 (Adenovirus F 40/41) (17) 星狀病毒 (Astrovirus) (18) 諾羅病毒 GI/GII (Norovirus GI/GII) (19) 輪狀病毒 A (Rotavirus A) (20) 沙波病毒(基因群 I、II、IV 及 V) (Sapovirus (Genogroups I, II, IV, and V))<br />
 雖然食物安全、公共衛生和醫療都有進步，但感染性腸胃炎仍是工業化國家所有年齡層人口的重大問題。陰性結果不應作為診斷、治療或其他患者處理決定的唯一依據，可能是因為受到本檢測無法偵測的病原體感染，或者發炎的原因並非感染，例如潰瘍性結腸炎、大腸激躁症或克隆氏症。不可僅根據本產品的結果進行診斷、治療或其他處置患者的決定此試驗的結果不應做為診斷、治療或其他管理決定的唯一基礎。陽性結果並未排除共同感染的可能性，也許同時感染了本產品檢測物種之外的其他物種。偵檢測到的微生物不一定就是病因可能不是疾病的確切原因。可偵測胃腸道中多種微生物的核酸為基礎的檢測法，也可以在爆發大流行時協助偵測及辨識急性腸胃炎。</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
-    <td class="auto-style10"><p class="auto-style43">不適用</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
-    <td class="auto-style10"><p class="auto-style43">12182*7<br />
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12182*7<br />
 12183*1</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
-    <td class="auto-style10"><p class="auto-style43">8200</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">8200</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
-    <td class="auto-style10"><p class="auto-style43">10250</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">10250</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
 
-  <tr>
-    <td style="width: 50px" class="auto-style5">&nbsp;</td>
-    <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
-    <td class="auto-style10"><p class="auto-style43">114/08/14</p></td>
-    <td class="auto-style7" style="width: 50px">&nbsp;</td>
-  </tr>
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
       </tbody>
     </table>
   </div>
