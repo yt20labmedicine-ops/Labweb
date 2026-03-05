@@ -1,66 +1,144 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="utf-8" />
-<title>O</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+
 <style>
-/* index 自帶樣式（不外掛css） */
-body { font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif; margin:0; background:#f6f7f8; }
-table { width:100%; border-collapse:collapse; background:#fff; }
-.hint { background:#0f5f68; color:#fff; text-align:center; padding:10px; font-size:18px; }
-th { background:#1b7a84; color:#fff; border:1px solid #cfd8dc; padding:12px; }
-td { border:1px solid #cfd8dc; padding:10px; text-align:center; font-size:15px; }
-.auto-style10 { color:#005c66; }
-.auto-style17 { color:#003d45; }
-a { text-decoration:none; color:inherit; display:block; }
-tr:hover td { background:#eef7f8; }
+:root{
+--nhi-primary:#1b7a84;
+--nhi-head:#e6f2f3;
+--nhi-border:#cfd8dc;
+--nhi-bg:#f4f6f6;
+--nhi-text:#263238;
+}
+body{
+margin:0;
+background:var(--nhi-bg);
+font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+color:var(--nhi-text);
+}
+.nhi-topbar{
+background:var(--nhi-primary);
+color:#fff;
+padding:14px 18px;
+font-weight:800;
+font-size:18px;
+}
+.wrap{
+max-width:1100px;
+margin:18px auto;
+padding:0 12px;
+}
+.card{
+background:#fff;
+border:1px solid var(--nhi-border);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.cardhead{
+padding:10px 14px;
+border-bottom:1px solid var(--nhi-border);
+font-weight:800;
+color:#004d55;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+th{
+background:var(--nhi-head);
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:15px;
+color:#004d55;
+}
+td.cell{
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:14px;
+}
+tr:hover td.cell{
+background:#f0fbfc;
+}
+.link a{
+text-decoration:none;
+color:#0b5f86;
+font-weight:700;
+}
+.link a:hover{
+text-decoration:underline;
+}
+.footer{
+text-align:center;
+font-size:12px;
+color:#607d8b;
+margin-top:10px;
+}
 </style>
 </head>
+
 <body>
-<table>
-<tr><td class="hint" colspan="2">快速搜尋請按鍵盤[Ctrl]+[F]輸入關鍵字查詢</td></tr>
-<tr><th>檢驗項目英文名稱</th><th>檢驗項目中文名稱</th></tr>
+<div class="nhi-topbar">亞洲大學附屬醫院 檢驗科</div>
 
+<div class="wrap">
+  <div class="card">
+    <div class="cardhead"></div>
+
+    <table>
+      <tr>
+        <th>檢驗項目英文名稱</th>
+        <th>檢驗項目中文名稱</th>
+      </tr>
+      
 <tr>
-  <td class="auto-style10"><a href="Occult_blood_(Gastric).html">Occult blood (Gastric)</a></td>
-  <td class="auto-style17"><a href="Occult_blood_(Gastric).html">胃內容物潛血檢驗</a></td>
+  <td class="cell link"><a href="Occult_blood_(Gastric).html">Occult blood (Gastric)</a></td>
+  <td class="cell link"><a href="Occult_blood_(Gastric).html">胃內容物潛血檢驗</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Occult_blood_test(EIA).html">Occult blood test(EIA), FOBT</a></td>
-  <td class="auto-style17"><a href="Occult_blood_test(EIA).html">糞便潛血免疫定量法</a></td>
+  <td class="cell link"><a href="Occult_blood_test(EIA).html">Occult blood test(EIA), FOBT</a></td>
+  <td class="cell link"><a href="Occult_blood_test(EIA).html">糞便潛血免疫定量法</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Occult_blood(Chemical)-Stool.html">Occult blood(Chemical)-Stool</a></td>
-  <td class="auto-style17"><a href="Occult_blood(Chemical)-Stool.html">糞便潛血反應檢驗－化學法</a></td>
+  <td class="cell link"><a href="Occult_blood(Chemical)-Stool.html">Occult blood(Chemical)-Stool</a></td>
+  <td class="cell link"><a href="Occult_blood(Chemical)-Stool.html">糞便潛血反應檢驗－化學法</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="OGTT.html">OGTT, Oral glucose tolerance test</a></td>
-  <td class="auto-style17"><a href="OGTT.html">口服葡萄糖耐量試驗</a></td>
+  <td class="cell link"><a href="OGTT.html">OGTT, Oral glucose tolerance test</a></td>
+  <td class="cell link"><a href="OGTT.html">口服葡萄糖耐量試驗</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Onko-Sure_DR-70.html">Onko-Sure DR-70</a></td>
-  <td class="auto-style17"><a href="Onko-Sure_DR-70.html">Onko-Sure癌症風險指標</a></td>
+  <td class="cell link"><a href="Onko-Sure_DR-70.html">Onko-Sure DR-70</a></td>
+  <td class="cell link"><a href="Onko-Sure_DR-70.html">Onko-Sure癌症風險指標</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Osmolality.html">Osmolality</a></td>
-  <td class="auto-style17"><a href="Osmolality.html">滲透壓</a></td>
+  <td class="cell link"><a href="Osmolality.html">Osmolality</a></td>
+  <td class="cell link"><a href="Osmolality.html">滲透壓</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Others_Fungus_Culture.html">Others Fungus Culture</a></td>
-  <td class="auto-style17"><a href="Others_Fungus_Culture.html">其他檢體黴菌培養</a></td>
+  <td class="cell link"><a href="Others_Fungus_Culture.html">Others Fungus Culture</a></td>
+  <td class="cell link"><a href="Others_Fungus_Culture.html">其他檢體黴菌培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Others_TB_Culture.html">Others TB Culture</a></td>
-  <td class="auto-style17"><a href="Others_TB_Culture.html">其他檢體結核菌培養</a></td>
+  <td class="cell link"><a href="Others_TB_Culture.html">Others TB Culture</a></td>
+  <td class="cell link"><a href="Others_TB_Culture.html">其他檢體結核菌培養</a></td>
 </tr>
 
-</table>
+    </table>
+  </div>
+
+  <div class="footer">快速搜尋可使用 Ctrl+F</div>
+</div>
 </body>
 </html>
