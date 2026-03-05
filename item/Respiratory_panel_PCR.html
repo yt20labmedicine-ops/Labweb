@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<style>
+:root{
+  --nhi-primary:#1b7a84;
+  --nhi-primary-dark:#0f5f68;
+  --nhi-bg:#f4f6f6;
+  --nhi-card:#ffffff;
+  --nhi-head:#e6f2f3;
+  --nhi-border:#cfd8dc;
+  --nhi-text:#263238;
+}
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+.nhi-topbar{
+  background:var(--nhi-primary);
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
+.auto-style2{
+  text-align:center;
+  font-size:15px;
+  color:#004d55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+.auto-style10{
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ margin:0; }
+.auto-style37{
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+}
+.auto-style41,.auto-style42{
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004d55;
+}
+.auto-style43{
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+
+/* layout */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.card-head{
+  padding:10px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607d8b;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004d55;
+  font-size:13px;
+}
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+}
+.main-table tr:hover td{
+  background:#f0fbfc;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* image box 400x400 */
+.img-box{
+  width:400px;
+  height:400px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  max-width:400px;
+  max-height:400px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.footer{
+  margin-top:12px;
+  color:#607d8b;
+  font-size:12px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <table class="main-table">
+      <tbody>
+        
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">呼吸道病原體多標的聚合酶鏈反應檢測（Respiratory panel PCR）</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">快篩檢驗單 (CM-T226)</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">參考範圍</p></td>
+  <td class="auto-style10"><p class="auto-style43">Not Detected</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table style="width: 100%;">
+<tr>
+<td style="width:50%;"><table style="width: 100%;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/044VTM病毒核酸採檢組.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">VTM病毒採檢管/ Nasal swab</span></td></tr></table></td>
+<td style="width:50%;">&nbsp;</td></tr>
+</table>
+  </td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1. 採取鼻咽拭子，置於傳送培養液中送檢。</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">Nested multiplex PCR, Filmarray</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">(A)Adenovirus：靈敏度 94.6% 特異性 96.9%<br />
+(B)Coronavirus 229E：靈敏度 91.7% 特異性 99.7%<br />
+(C)Coronavirus HKU1：靈敏度 100% 特異性 99.2%<br />
+(D)Coronavirus NL63：靈敏度 100% 特異性 99.4%<br />
+(E)Coronavirus OC43：靈敏度 80.5% 特異性 99.7%<br />
+(F)Human Metapneumovirus：靈敏度 97.3% 特異性 99.5%<br />
+(G)Human Rhinovirus/Enterovirus：靈敏度 97.5% 特異性 93.5%<br />
+(H)Influenza virus A：靈敏度 100% 特異性 100%<br />
+(I)Influenza virus B：靈敏度 100% 特異性 99.9%<br />
+(J)Parainfluenza virus 1：靈敏度 100% 特異性 99.9%<br />
+(K)Parainfluenza virus 2：靈敏度 97.9% 特異性 99.5%<br />
+(L)Parainfluenza virus 3：靈敏度 95.6% 特異性 99.4%<br />
+(M)Parainfluenza virus 4：靈敏度 100% 特異性 99.6%<br />
+(N)Respiratory syncytial virus：靈敏度 99.4% 特異性 98.3%<br />
+(O)Bordetella parapertussis (IS1001)：靈敏度 85.7% 特異性 100%<br />
+(P)Bordetella pertussis (ptxP)：靈敏度 66.7% 特異性 99.9%<br />
+(Q)Chlamydia pneumoniae：靈敏度 100% 特異性 99.9%<br />
+(R)Mycoplasma pneumoniae：靈敏度 95.8% 特異性 99.7%<br />
+(S)SARS-CoV-2：靈敏度 100% 特異性 100%</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">鏡檢組#1292<br />
+分生組#1294</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">4小時</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">對於疑似患有呼吸道感染個體取得的鼻咽拭子，同時進行多種呼吸道病毒和細菌核酸的定性檢測及辨識。可辨識的物種如下: (1)腺病毒（Adenovirus） (2)冠狀病毒229E（Coronavirus 229E） (3)冠狀病毒HKU1（Coronavirus HKU1） (4)冠狀病毒NL63（Coronavirus NL63） (5)冠狀病毒OC43（Coronavirus OC43） (6)人類間質肺炎病毒（Human Metapneumovirus） (7)人類鼻病毒/腸病毒（Human Rhinovirus/Enterovirus） (8)A型流感病毒（Influenza virus A），包括亞型H1、H1-2009、H3 (9)B型流感病毒（Influenza virus B） (10)副流感病毒1型（Parainfluenza virus 1） (11)副流感病毒2型（Parainfluenza virus 2） (12)副流感病毒3型（Parainfluenza virus 3） (13)副流感病毒4型（Parainfluenza virus 4） (14)呼吸道融合病毒（Respiratory syncytial virus） (15)副百日咳博德氏菌(IS1001) (Bordetella parapertussis(IS1001)) (16)百日咳博德氏菌(ptxP) (Bordetella pertussis(ptxP)) (17)肺炎披衣菌（Chlamydia pneumoniae） (18)肺炎黴漿菌（Mycoplasma pneumoniae） (19) 新型冠狀病毒（SARS-CoV-2）<br />
+呼吸道病原體會導致急性局部及全身性疾病，其中多數嚴重病例發生於兒童、老年人及免疫功能低下的個體。呼吸道症狀包括咳嗽、鼻涕、鼻塞、發燒、氣喘、頭痛及肌肉疼痛，由於許多病毒及細菌所導致疾病的相似性，難以僅根據臨床症狀進行診斷。進行潛在致病原因鑑定，可提供資料協助醫師確定適當的病患治療及公共衛生對策進行疾病控制。 陰性結果不應作為診斷、治療或其他患者處理決定的唯一依據。在呼吸道疾病情況下獲得陰性結果，可能是由於此試驗沒有檢測到的其他病原體所導致；或是由於鼻咽拭子檢體可能未檢測到的下呼吸道感染所導致。陽性結果並不能排除其他微生物多重感染的可能性。 施用鼻噴式流感疫苗（例如FluMist）不久後收集鼻咽拭子樣本，可能導致本產品檢測到疫苗內的病毒，但是不代表出現感染。</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">12182C*5<br />
+12183C*4</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">9800</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">12250</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+
+<tr>
+  <td style="width: 50px" class="auto-style5">&nbsp;</td>
+  <td style="width: 210px" class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/03/04</p></td>
+  <td class="auto-style7" style="width: 50px">&nbsp;</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages</div>
+</div>
+
+</body>
+</html>
