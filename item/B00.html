@@ -1,127 +1,205 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="utf-8" />
-<title>B</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+
 <style>
-/* index 自帶樣式（不外掛css） */
-body { font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif; margin:0; background:#f6f7f8; }
-table { width:100%; border-collapse:collapse; background:#fff; }
-.hint { background:#0f5f68; color:#fff; text-align:center; padding:10px; font-size:18px; }
-th { background:#1b7a84; color:#fff; border:1px solid #cfd8dc; padding:12px; }
-td { border:1px solid #cfd8dc; padding:10px; text-align:center; font-size:15px; }
-.auto-style10 { color:#005c66; }
-.auto-style17 { color:#003d45; }
-a { text-decoration:none; color:inherit; display:block; }
-tr:hover td { background:#eef7f8; }
+:root{
+--nhi-primary:#1b7a84;
+--nhi-head:#e6f2f3;
+--nhi-border:#cfd8dc;
+--nhi-bg:#f4f6f6;
+--nhi-text:#263238;
+}
+body{
+margin:0;
+background:var(--nhi-bg);
+font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+color:var(--nhi-text);
+}
+.nhi-topbar{
+background:var(--nhi-primary);
+color:#fff;
+padding:14px 18px;
+font-weight:800;
+font-size:18px;
+}
+.wrap{
+max-width:1100px;
+margin:18px auto;
+padding:0 12px;
+}
+.card{
+background:#fff;
+border:1px solid var(--nhi-border);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.cardhead{
+padding:10px 14px;
+border-bottom:1px solid var(--nhi-border);
+font-weight:800;
+color:#004d55;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+th{
+background:var(--nhi-head);
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:15px;
+color:#004d55;
+}
+td.cell{
+border:1px solid var(--nhi-border);
+padding:12px;
+text-align:center;
+font-size:14px;
+}
+tr:hover td.cell{
+background:#f0fbfc;
+}
+.link a{
+text-decoration:none;
+color:#0b5f86;
+font-weight:700;
+}
+.link a:hover{
+text-decoration:underline;
+}
+.footer{
+text-align:center;
+font-size:12px;
+color:#607d8b;
+margin-top:10px;
+}
 </style>
 </head>
+
 <body>
-<table>
-<tr><td class="hint" colspan="2">快速搜尋請按鍵盤[Ctrl]+[F]輸入關鍵字查詢</td></tr>
-<tr><th>檢驗項目英文名稱</th><th>檢驗項目中文名稱</th></tr>
+<div class="nhi-topbar">亞洲大學附屬醫院 檢驗科</div>
 
+<div class="wrap">
+  <div class="card">
+    <div class="cardhead"></div>
+
+    <table>
+      <tr>
+        <th>檢驗項目英文名稱</th>
+        <th>檢驗項目中文名稱</th>
+      </tr>
+      
 <tr>
-  <td class="auto-style10"><a href="BCR-ABL1_fusion_gene_analysis.html">BCR-ABL1 fusion gene analysis</a></td>
-  <td class="auto-style17"><a href="BCR-ABL1_fusion_gene_analysis.html">BCR-ABL1急/慢性白血病融合基因檢測</a></td>
+  <td class="cell link"><a href="BCR-ABL1_fusion_gene_analysis.html">BCR-ABL1 fusion gene analysis</a></td>
+  <td class="cell link"><a href="BCR-ABL1_fusion_gene_analysis.html">BCR-ABL1急/慢性白血病融合基因檢測</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="BCR-ABL1_Quantitative_PCR.html">BCR-ABL1 Quantitative PCR</a></td>
-  <td class="auto-style17"><a href="BCR-ABL1_Quantitative_PCR.html">BCR-ABL1基因定量檢測</a></td>
+  <td class="cell link"><a href="BCR-ABL1_Quantitative_PCR.html">BCR-ABL1 Quantitative PCR</a></td>
+  <td class="cell link"><a href="BCR-ABL1_Quantitative_PCR.html">BCR-ABL1基因定量檢測</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Benzodiazepine.html">Benzodiazepine</a></td>
-  <td class="auto-style17"><a href="Benzodiazepine.html">鎮靜安眠用藥－苯二氮平</a></td>
+  <td class="cell link"><a href="Benzodiazepine.html">Benzodiazepine</a></td>
+  <td class="cell link"><a href="Benzodiazepine.html">鎮靜安眠用藥－苯二氮平</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Beta-2_Microglobulin.html">Beta-2 Microglobulin, β2-Microglobulin</a></td>
-  <td class="auto-style17"><a href="Beta-2_Microglobulin.html">Beta2 微球蛋白</a></td>
+  <td class="cell link"><a href="Beta-2_Microglobulin.html">Beta-2 Microglobulin, β2-Microglobulin</a></td>
+  <td class="cell link"><a href="Beta-2_Microglobulin.html">Beta2 微球蛋白</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Beta-2-Glycoprotein_I_IgG.html">Beta-2-Glycoprotein I IgG</a></td>
-  <td class="auto-style17"><a href="Beta-2-Glycoprotein_I_IgG.html">抗B2醣蛋白I 抗體IgG</a></td>
+  <td class="cell link"><a href="Beta-2-Glycoprotein_I_IgG.html">Beta-2-Glycoprotein I IgG</a></td>
+  <td class="cell link"><a href="Beta-2-Glycoprotein_I_IgG.html">抗B2醣蛋白I 抗體IgG</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Beta-2-Glycoprotein_I_IgM.html">Beta-2-Glycoprotein I IgM</a></td>
-  <td class="auto-style17"><a href="Beta-2-Glycoprotein_I_IgM.html">抗B2醣蛋白I 抗體IgM</a></td>
+  <td class="cell link"><a href="Beta-2-Glycoprotein_I_IgM.html">Beta-2-Glycoprotein I IgM</a></td>
+  <td class="cell link"><a href="Beta-2-Glycoprotein_I_IgM.html">抗B2醣蛋白I 抗體IgM</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Beta-HCG.html">Beta-HCG, Human Chronic Gonadotropin</a></td>
-  <td class="auto-style17"><a href="Beta-HCG.html">總絨毛膜促性腺激素－乙亞單體</a></td>
+  <td class="cell link"><a href="Beta-HCG.html">Beta-HCG, Human Chronic Gonadotropin</a></td>
+  <td class="cell link"><a href="Beta-HCG.html">總絨毛膜促性腺激素－乙亞單體</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Bile_culture.html">Bile culture</a></td>
-  <td class="auto-style17"><a href="Bile_culture.html">膽汁培養</a></td>
+  <td class="cell link"><a href="Bile_culture.html">Bile culture</a></td>
+  <td class="cell link"><a href="Bile_culture.html">膽汁培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Bleeding_Time_(Ivy_Method).html">Bleeding Time (Ivy Method)</a></td>
-  <td class="auto-style17"><a href="Bleeding_Time_(Ivy_Method).html">出血時間</a></td>
+  <td class="cell link"><a href="Bleeding_Time_(Ivy_Method).html">Bleeding Time (Ivy Method)</a></td>
+  <td class="cell link"><a href="Bleeding_Time_(Ivy_Method).html">出血時間</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Blood_Culture.html">Blood Culture</a></td>
-  <td class="auto-style17"><a href="Blood_Culture.html">血液培養</a></td>
+  <td class="cell link"><a href="Blood_Culture.html">Blood Culture</a></td>
+  <td class="cell link"><a href="Blood_Culture.html">血液培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Blood_Fungus_Culture.html">Blood Fungus Culture</a></td>
-  <td class="auto-style17"><a href="Blood_Fungus_Culture.html">血液黴菌培養</a></td>
+  <td class="cell link"><a href="Blood_Fungus_Culture.html">Blood Fungus Culture</a></td>
+  <td class="cell link"><a href="Blood_Fungus_Culture.html">血液黴菌培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Blood_Gas.html">Blood Gas-Artery/vein</a></td>
-  <td class="auto-style17"><a href="Blood_Gas.html">血中氣體濃度－動/靜脈血</a></td>
+  <td class="cell link"><a href="Blood_Gas.html">Blood Gas-Artery/vein</a></td>
+  <td class="cell link"><a href="Blood_Gas.html">血中氣體濃度－動/靜脈血</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Blood_Ketone_Body.html">Blood Ketone Body, Blood β-hydroxybutyrate test</a></td>
-  <td class="auto-style17"><a href="Blood_Ketone_Body.html">血中酮體試驗</a></td>
+  <td class="cell link"><a href="Blood_Ketone_Body.html">Blood Ketone Body, Blood β-hydroxybutyrate test</a></td>
+  <td class="cell link"><a href="Blood_Ketone_Body.html">血中酮體試驗</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Blood_smear_interpretation.html">Blood smear interpretation</a></td>
-  <td class="auto-style17"><a href="Blood_smear_interpretation.html">血液抹片</a></td>
+  <td class="cell link"><a href="Blood_smear_interpretation.html">Blood smear interpretation</a></td>
+  <td class="cell link"><a href="Blood_smear_interpretation.html">血液抹片</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Blood_TB_Culture.html">Blood TB Culture</a></td>
-  <td class="auto-style17"><a href="Blood_TB_Culture.html">血液結核菌培養</a></td>
+  <td class="cell link"><a href="Blood_TB_Culture.html">Blood TB Culture</a></td>
+  <td class="cell link"><a href="Blood_TB_Culture.html">血液結核菌培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Body_fluid_culture.html">Body fluid culture</a></td>
-  <td class="auto-style17"><a href="Body_fluid_culture.html">體液培養</a></td>
+  <td class="cell link"><a href="Body_fluid_culture.html">Body fluid culture</a></td>
+  <td class="cell link"><a href="Body_fluid_culture.html">體液培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Body_Fluid_Fungus_Culture.html">Body Fluid Fungus Culture</a></td>
-  <td class="auto-style17"><a href="Body_Fluid_Fungus_Culture.html">體液黴菌培養</a></td>
+  <td class="cell link"><a href="Body_Fluid_Fungus_Culture.html">Body Fluid Fungus Culture</a></td>
+  <td class="cell link"><a href="Body_Fluid_Fungus_Culture.html">體液黴菌培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Bone_marrow_Culture.html">Bone marrow Culture</a></td>
-  <td class="auto-style17"><a href="Bone_marrow_Culture.html">骨髓培養</a></td>
+  <td class="cell link"><a href="Bone_marrow_Culture.html">Bone marrow Culture</a></td>
+  <td class="cell link"><a href="Bone_marrow_Culture.html">骨髓培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="Brain_Abscess_culture.html">Brain Abscess culture</a></td>
-  <td class="auto-style17"><a href="Brain_Abscess_culture.html">腦膿瘍培養</a></td>
+  <td class="cell link"><a href="Brain_Abscess_culture.html">Brain Abscess culture</a></td>
+  <td class="cell link"><a href="Brain_Abscess_culture.html">腦膿瘍培養</a></td>
 </tr>
 
 <tr>
-  <td class="auto-style10"><a href="BUN_UUN.html">BUN. Blood urea nitrogen
+  <td class="cell link"><a href="BUN_UUN.html">BUN. Blood urea nitrogen
 UUN. Urine urea nitrogen</a></td>
-  <td class="auto-style17"><a href="BUN_UUN.html">血中尿素氮</a></td>
+  <td class="cell link"><a href="BUN_UUN.html">血中尿素氮</a></td>
 </tr>
 
-</table>
+    </table>
+  </div>
+
+  <div class="footer">快速搜尋可使用 Ctrl+F</div>
+</div>
 </body>
 </html>
