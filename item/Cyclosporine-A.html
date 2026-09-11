@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>檢驗資料總覽</title>
+
+<style>
+/* =========================
+   NHI theme（內嵌，不外掛css）
+   ========================= */
+:root{
+  --nhi-primary:#1B7A84;
+  --nhi-primary-dark:#0F5F68;
+  --nhi-bg:#F4F6F6;
+  --nhi-card:#ffffff;
+  --nhi-head:#E6F2F3;
+  --nhi-border:#CFD8DC;
+  --nhi-text:#263238;
+  --nhi-link:#0B5F86;
+  --nhi-accent:#F9A825;
+  --nhi-hover:#F0FBFC;
+}
+
+
+/* base */
+body{
+  margin:0;
+  background:var(--nhi-bg);
+  font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  color:var(--nhi-text);
+}
+
+/* top bar */
+.nhi-topbar{
+  background:linear-gradient(135deg,var(--nhi-primary-dark),var(--nhi-primary));
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.nhi-topbar .title{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+.nhi-topbar .sub{
+  opacity:.95;
+  font-size:14px;
+}
+
+/* --- 舊版 auto-style* 對應 NHI --- */
+.auto-style2{ /* 左欄 label */
+  text-align:center;
+  font-size:15px;
+  color:#004D55;
+  border:1px solid var(--nhi-border);
+  background:var(--nhi-head);
+  font-weight:700;
+}
+.auto-style5{ border:0; background:transparent; }
+.auto-style7{ border:0; background:transparent; }
+
+.auto-style10{ /* 右欄 value */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+}
+.auto-style11{ margin:0; }
+.auto-style16{ margin:0; line-height:1.7; }
+
+.auto-style37{ /* 右欄 value（含圖片） */
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  font-size:15px;
+  color:var(--nhi-text);
+  padding:10px;
+}
+.auto-style40{
+  text-align:center;
+  border:1px solid var(--nhi-border);
+  background:#fff;
+  padding:10px;
+  line-height:1.6;
+  overflow-wrap:anywhere;
+}
+.auto-style41,.auto-style42{
+  border:1px solid var(--nhi-border);
+  padding:10px;
+  font-size:14px;
+}
+.auto-style42{
+  text-align:center;
+  font-weight:700;
+  background:var(--nhi-head);
+  color:#004D55;
+}
+.auto-style43{
+  margin:0;
+  line-height:1.75;
+  white-space:normal;
+}
+
+/* layout */
+.page-wrap{
+  max-width:1100px;
+  margin:18px auto 30px;
+  padding:0 12px;
+}
+.card{
+  background:var(--nhi-card);
+  border:1px solid var(--nhi-border);
+  border-radius:12px;
+  overflow:visible;
+  box-shadow:0 8px 24px rgba(48,64,111,.10);
+}
+.card-head{
+  padding:10px 14px;
+  background:#FFFFFF;
+  border-bottom:1px solid var(--nhi-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.breadcrumb{
+  font-size:13px;
+  color:#607D8B;
+}
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--nhi-head);
+  border:1px solid var(--nhi-border);
+  color:#004D55;
+  font-size:13px;
+}
+
+/* main table */
+.main-table{
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+.main-table tr:hover td{
+  background:#F0FBFC;
+}
+.main-table td{
+  padding:12px;
+  vertical-align:top;
+}
+
+/* image box 400x400 */
+.img-box{
+  width:100%;
+  height:260px;
+  margin:0 auto;
+  padding:10px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#fff;
+}
+.img-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+}
+
+.footer{
+  margin-top:12px;
+  color:#607D8B;
+  font-size:12px;
+  text-align:center;
+}
+
+a{
+  color:var(--nhi-link);
+  text-decoration:none;
+  font-weight:600;
+}
+a:hover{
+  color:var(--nhi-primary-dark);
+  text-decoration:underline;
+}
+.nhi-topbar{
+  box-shadow:0 3px 12px rgba(48,64,111,.18);
+}
+.nhi-topbar .sub{
+  border-left:1px solid rgba(255,255,255,.35);
+  padding-left:12px;
+}
+.card{
+  position:relative;
+}
+.card::before{
+  content:"";
+  display:block;
+  height:4px;
+  background:linear-gradient(90deg,var(--nhi-primary),var(--nhi-accent));
+}
+.auto-style2{
+  width:195px;
+  min-width:195px;
+  box-sizing:border-box;
+}
+.auto-style10,
+.auto-style37{
+  line-height:1.75;
+}
+.badge{
+  color:#004D55;
+  font-weight:700;
+}
+.main-table tr{
+  transition:background .18s ease;
+}
+
+.specimen-grid{
+  margin:-7px;
+}
+.specimen-card{
+  height:100%;
+  background:#fff;
+  border:1px solid var(--nhi-border);
+}
+.specimen-card .auto-style40{
+  border-left:0;
+  border-right:0;
+}
+.specimen-card tr:first-child .auto-style40{
+  border-top:0;
+}
+.specimen-card tr:last-child .auto-style40{
+  border-bottom:0;
+}
+
+@media (max-width:700px){
+  .page-wrap{
+    margin:10px auto 20px;
+    padding:0 8px;
+  }
+  .nhi-topbar{
+    padding:12px 14px;
+  }
+  .nhi-topbar .sub{
+    width:100%;
+    border-left:0;
+    padding-left:0;
+  }
+  .main-table,
+  .main-table tbody,
+  .main-table tr,
+  .main-table td{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+  }
+  .auto-style2{
+    width:100%;
+    min-width:0;
+    text-align:left;
+  }
+  .img-box{
+    width:100%;
+    height:220px;
+    min-height:0;
+  }
+  .img-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+  .specimen-grid,
+  .specimen-grid tbody,
+  .specimen-grid tr,
+  .specimen-grid td{
+    display:block;
+    width:100% !important;
+    box-sizing:border-box;
+  }
+  .specimen-grid{
+    margin:0;
+    border-spacing:0;
+  }
+  .specimen-grid td{
+    margin-bottom:14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nhi-topbar">
+  <div class="title">亞洲大學附屬醫院 檢驗科</div>
+  <div class="sub">檢驗資料總覽</div>
+</div>
+
+<div class="page-wrap">
+  <div class="card">
+    <div class="card-head">
+      <div class="breadcrumb">首頁 ＞ 檢驗服務 ＞ 檢驗項目查詢</div>
+      <div class="badge">檢驗項目明細</div>
+    </div>
+
+    <table class="main-table">
+      <tbody>
+        
+<tr>
+  <td class="auto-style2"><p class="auto-style11">檢驗項目</p></td>
+  <td class="auto-style10"><p class="auto-style43">器官移植之免疫抑制劑-環孢黴素（Cyclosporine-A）</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">檢驗表單</p></td>
+  <td class="auto-style10"><p class="auto-style43">藥物血中濃度檢驗單(CM-T225)</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">採檢容器及檢體量</p></td>
+  <td class="auto-style37">
+    <table class="specimen-grid" style="width:100%; table-layout:fixed; border-collapse:separate; border-spacing:14px;">
+<tr>
+<td style="width:50%;"><table class="specimen-card" style="width:100%; table-layout:fixed; border-collapse:collapse;"><tr><td class="auto-style40"><div class="img-box"><img alt="" src="../img/007紫頭管.jpg" /></div></td></tr><tr><td class="auto-style40"><span class="auto-style43">3mL 紫頭管/血液<br />
+血液採檢量1-3mL</span></td></tr></table></td>
+<td style="width:50%;">&nbsp;</td></tr>
+</table>
+  </td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">採檢注意事項</p></td>
+  <td class="auto-style10"><p class="auto-style43">1.請於系統輸入採檢前最後一次服用藥物的時間。<br />
+2.全血4小時內常溫送檢。</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">檢驗方法</p></td>
+  <td class="auto-style10"><p class="auto-style43">Affinity Chrome Mediated Immunoassay (ACMIA)免疫法</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">檢驗效能</p></td>
+  <td class="auto-style10"><p class="auto-style43">依代檢單位公告</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">負責組別</p></td>
+  <td class="auto-style10"><p class="auto-style43">代檢單位：台中中國附醫(急診檢驗組)#15447<br />
+責任單位：亞大醫院(檢驗科)#1294</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">報告完成時間</p></td>
+  <td class="auto-style10"><p class="auto-style43">委外3工作天</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">臨床意義</p></td>
+  <td class="auto-style10"><p class="auto-style43">Cyclosporine 是一種有效的免疫抑制劑，主要是用於器官移植的治療，可有效的增加皮膚、心臟、腎臟、胰臟、骨髓、肺臟、小腸和肝臟等器官移植的成功率。Cyclosporine經由靜脈注射或口服進入人體，由於腸胃道的吸收較不完全且變數較大，以及生物利用率的增加，所以在治療過程中必須逐漸降低口服劑量，維持血液中的穩定濃度，以得到最好的療效，並避免中毒的產生。Cyclosporine大部分經由肝臟代謝，細胞P-450酵素扮演了代謝轉換的重要角色。而使用Cyclosporine也可能產生嚴重的中毒症狀，主要是對腎臟和肝臟的傷害，其他包括像腹瀉、嘔吐、顫抖、高血壓等症狀。<br />
+<br />
+環孢黴素是一種從真菌中得到的環類十一氨基酸，它是一種強效的免疫抑制劑。過低的環孢黴素水準可能導致對移植的器官產生排斥作用。中毒量的環孢黴素水準可以導致許多嚴重的副作用，包括腎毒性和肝毒性。監測病患全血中的非口服藥物環孢黴素濃度並結合其它實驗室數據以及臨床表現分析這些數值，這是確保接受實體器官移植的患者的免疫抑制劑治療保持在恰當水準的最有效的方法。<br />
+<br />
+環孢黴素大部分經過肝臟代謝。環孢黴素的血藥濃度可能被一些藥物改變，這些藥物可以影響肝臟微粒體的活性，特別是細胞色素 P-450 系統。已經知道有許多物質可以抑制這些，例如西米替丁、酮康唑、甲強龍，這些藥物可以使肝代謝能力降低從而升高環孢黴素的濃度。有一些細胞色素 P-450 的誘導劑，比如利福平、苯妥英、苯巴比妥和胺咪，可以使肝臟的代謝能力增強，從而降低環孢黴素的濃度。</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">加驗時效</p></td>
+  <td class="auto-style10"><p class="auto-style43">不適用</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">健保代碼</p></td>
+  <td class="auto-style10"><p class="auto-style43">10522B</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">健保點數</p></td>
+  <td class="auto-style10"><p class="auto-style43">320</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">自費收費</p></td>
+  <td class="auto-style10"><p class="auto-style43">400</p></td>
+</tr>
+
+<tr>
+  <td class="auto-style2"><p class="auto-style11">更新日期</p></td>
+  <td class="auto-style10"><p class="auto-style43">115/09/10</p></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">© Laboratory Information Pages</div>
+</div>
+
+</body>
+</html>
