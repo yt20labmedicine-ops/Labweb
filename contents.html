@@ -9,33 +9,36 @@
 <style type="text/css">
 body{
     font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
+  line-height:1.55;
     font-size:16px;
     margin:0;
-    background:#f4f6f6;
+    background:#F4F6F6;
 }
 .menu-table{ width:100%; border-collapse:collapse; }
 .menu-btn{
-    border:1px solid #cfd8dc;
+    border:1px solid #CFD8DC;
     background:#ffffff;
     text-align:center;
-    padding:14px 6px;
-    color:#004d55;
+    padding:13px 8px;
+    color:#004D55;
     font-weight:bold;
     cursor:pointer;
-    transition:all .2s ease;
+    transition:background .2s ease,color .2s ease,transform .15s ease;
 }
 .menu-btn a{
     text-decoration:none;
     color:inherit;
     display:block;
 }
-.menu-btn:hover{ background:#1b7a84; color:#ffffff; }
-.menu-main{ background:#1b7a84; color:#ffffff; font-size:17px; }
-.menu-main:hover{ background:#0f5f66; }
-.menu-alpha{ background:#eef6f7; color:#004d55; }
-.menu-alpha:hover{ background:#cfe9ec; }
-.menu-title{ background:#f9a825; color:#ffffff; font-size:17px; font-weight:bold; }
-.menu-empty{ background:#f4f6f6; height:20px; }
+.menu-btn:hover{ background:#1B7A84; color:#ffffff; transform:translateX(2px); }
+.menu-main{ background:#1B7A84; color:#ffffff; font-size:17px; }
+.menu-main:hover{ background:#0F5F68; }
+.menu-alpha{ background:#F0FBFC; color:#004D55; }
+.menu-alpha:hover{ background:#CFE9EC; }
+.menu-title{ background:#F9A825; color:#ffffff; font-size:17px; font-weight:bold; }
+.menu-title a{ color:#ffffff; text-decoration:none; display:block; padding:14px 6px; }
+.menu-title:hover{ background:#D98F00; }
+.menu-empty{ background:#F4F6F6; height:20px; }
 </style>
 </head>
 
@@ -43,6 +46,7 @@ body{
 
 <table class="menu-table">
 
+<tr><td class="menu-title"><a href="NoticeBoard.html" target="main">公告事項</a></td></tr>
 <tr><td class="menu-btn menu-main"><a href="QM.html" target="main">品質政策與目標</a></td></tr>
 <tr><td class="menu-btn menu-main"><a href="Confidential.html" target="main">個人資訊保護政策<br />暨公正性承諾</a></td></tr>
 <tr><td class="menu-btn menu-main"><a href="Complain.html" target="main">檢驗諮詢、抱怨<br />及知情同意</a></td></tr>
